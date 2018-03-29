@@ -1,11 +1,11 @@
 {
 	"name": "canvas",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "A small library that handles common tasks with the HTML5 <canvas>",
 	"main": "dist/canvas.js",
+	"types": "dist/canvas.d.ts",
 	"author": "Thomas Mays <thomas@mindofthomas.com>",
 	"license": "MIT",
-	"types": "dist/index.d.ts",
 	"scripts": {
 		"start": "webpack --mode development",
 		"build-dts": "dts-bundle --main dist/index.d.ts --name canvas --removeSource",
