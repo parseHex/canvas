@@ -1,6 +1,7 @@
 import * as draw from './draw';
 import * as utility from './utility';
 import state from './state';
+import { RectOptions } from './ifc';
 
 export type LoopFunction = (currentFrame: number) => void;
 export interface LoopOptions {
@@ -16,7 +17,7 @@ let timing: boolean = false;
 let clearEachFrame: boolean = false;
 let currentFrame: number = -1;
 let background: string = 'white';
-let backgroundObject: any;
+let backgroundObject: RectOptions;
 let framerate: number = 1;
 let drawnBackground: boolean = false;
 let timingStart: number, timingEnd: number, timingResult: number;
