@@ -8,8 +8,8 @@
 	"license": "MIT",
 	"scripts": {
 		"start": "webpack --mode development",
-		"build-dts": "dts-bundle --main dist/index.d.ts --name canvas --removeSource",
-		"build": "webpack --mode production && yarn build-dts"
+		"cleanup": "rimraf dist lib typings",
+		"build": "npm run cleanup && tsc && webpack --mode production"
 	},
 	"repository": {
 		"type": "git",
