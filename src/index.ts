@@ -9,9 +9,9 @@ export { utility };
 /**
  * Set the canvas element (and context) that will be used for all future operations.
  */
-export function setCanvas(canvas: HTMLCanvasElement) {
-	state.canvas = canvas;
-	state.ctx = canvas.getContext('2d');
+export function setCanvas(canvasEl: HTMLCanvasElement) {
+	state.canvas = canvasEl;
+	state.ctx = canvasEl.getContext('2d');
 }
 
 /**
