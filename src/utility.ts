@@ -30,3 +30,37 @@ export function onClick(handler: (mousePos: ifc.Coordinate) => void) {
 		handler(mousePos);
 	});
 }
+
+/**
+ * Add an onDrag handler to the canvas.
+ * The handler will be called with the coordinate of the mouse (during a drag) in the canvas.
+ * (Currently, `event.offsetX` and `event.offsetY` are where the coordinates come from.)
+ *
+ * Handler will also be called once on `mousedown` event.
+ */
+export function onDrag(handler: (mousePos: ifc.Coordinate) => void) {
+	state.canvas.addEventListener('mousedown', function (event: MouseEvent) {
+		state.dragging = true;
+
+		const mousePos = {
+			x: event.offsetX,
+			y: event.offsetY,
+		};
+
+		handler(mousePos);
+	});
+	// listen for mouse up on the window to catch the event when not hovering over canvas
+	window.addEventListener('mouseup', function () {
+		state.dragging = false;
+	});
+	state.canvas.addEventListener('mousemove', function (event: MouseEvent) {
+		if (!state.dragging) return;
+
+		const mousePos = {
+			x: event.offsetX,
+			y: event.offsetY,
+		};
+
+		handler(mousePos);
+	});
+}

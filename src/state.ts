@@ -3,6 +3,7 @@ export interface State {
 	ctx: CanvasRenderingContext2D;
 	backgroundCanvas: HTMLCanvasElement;
 	backgroundCtx: CanvasRenderingContext2D;
+	dragging: boolean;
 }
 
 const state: State = {
@@ -10,6 +11,7 @@ const state: State = {
 	ctx: null,
 	backgroundCanvas: null,
 	backgroundCtx: null,
+	dragging: false,
 };
 
 export default state;
