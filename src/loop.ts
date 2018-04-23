@@ -36,8 +36,8 @@ export function setLoop(opts: LoopOptions) {
 		y: 0,
 		width: state.canvas.width,
 		height: state.canvas.height,
-		strokeStyle: 'transparent',
-		fillStyle: background,
+		stroke: 'transparent',
+		fill: background,
 	};
 
 	if (state.backgroundCanvas) {
