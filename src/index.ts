@@ -24,3 +24,10 @@ export function setBackgroundCanvas(canvas: HTMLCanvasElement) {
 	state.backgroundCanvas = canvas;
 	state.backgroundCtx = canvas.getContext('2d');
 }
+
+/**
+ * Get the canvas's context.
+ */
+export function getContext() {
+	return state.ctx;
+}
