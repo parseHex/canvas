@@ -59,6 +59,11 @@ export function setLoop(opts: LoopOptions) {
 }
 
 function internalLoop() {
+	if (!loopFunction) {
+		requestAnimationFrame(internalLoop);
+		return;
+	}
+
 	currentFrame++;
 
 	if (currentFrame % framerate === 0) {
@@ -66,9 +71,14 @@ function internalLoop() {
 
 		if (clearEachFrame) utility.clear();
 
+		if (currentFrame === 0 && !clearEachFrame) {
+			draw.rect(backgroundObject);
+			drawnBackground = true;
+		}
+
 		if (!drawnBackground) draw.rect(backgroundObject);
 
-		if (loopFunction) loopFunction(currentFrame);
+		loopFunction(currentFrame);
 
 		if (timing) {
 			timingEnd = performance.now();
