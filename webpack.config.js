@@ -1,5 +1,4 @@
 const path = require('path');
-const { TSDeclerationsPlugin } = require('ts-loader-decleration');
 
 module.exports = (env, argv) => ({
 	entry: './src/index.ts',
@@ -8,18 +7,15 @@ module.exports = (env, argv) => ({
 		filename: 'canvas.js',
 		library: 'canvas',
 		libraryTarget: 'umd',
+		umdNamedDefine: true,
 	},
 	module: {
 		rules: [
 			{
 				test: /\.ts$/,
+				include: /src/,
 				exclude: /node_modules/,
-				loader: 'ts-loader',
-				query: {
-					compilerOptions: {
-						declaration: argv.mode === 'production',
-					},
-				},
+				loader: 'awesome-typescript-loader',
 			},
 		],
 	},
@@ -28,5 +24,5 @@ module.exports = (env, argv) => ({
 	},
 	watch: argv.mode === 'development',
 	mode: argv.mode,
-	devtool: argv.mode === 'development' ? 'source-map' : false,
+	devtool: 'source-map',
 });
