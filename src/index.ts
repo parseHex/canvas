@@ -16,7 +16,7 @@ export function setCanvas(canvas: HTMLCanvasElement) {
 
 /**
  * Set a separate canvas element that will be used for drawing the background (set with the loop).
- * This can help with performance since the background can be draw once on a separate canvas.
+ * This can help with performance since the background can be drawn once on a separate canvas.
  *
  * Be sure to set this before adding a loop.
  */
