@@ -1,6 +1,6 @@
-# `canvas`
+# `proto-canvas`
 
-A small library that handles common tasks with the HTML5 `<canvas>`.
+A library that handles common `<canvas>` tasks to make prototyping easier.
 
 It's mostly for my own use but I'm trying to keep it organized and easy to use for anyone.
 
@@ -8,7 +8,7 @@ It's mostly for my own use but I'm trying to keep it organized and easy to use f
 
 ```javascript
 
-import * as c from 'canvas';
+import * as c from 'proto-canvas';
 
 // set the canvas element
 c.setCanvas(document.getElementById('main'));
@@ -59,7 +59,14 @@ c.onDrag(function (mousePos) {
 
 ## [API](./API.md)
 
+## TODO
 
+- Object Manager
+	- A higher-level API to add objects (shapes, text, etc.) to the canvas that `proto-canvas` will manage the (re-)drawing/updating of.
+- More drawable shapes
+	- Triangle
+- Multiple canvas support
+- Ability to change origin/anchor point (e.g. set (0, 0) point to the center of the canvas and all coordinates)
 
 ## Development
 

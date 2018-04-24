@@ -3,7 +3,7 @@
 `TODO: Generate API docs`
 
 ```javascript
-import * as c from 'canvas';
+import * as c from 'proto-canvas';
 ```
 
 ## `c.setCanvas(canvasEl: HTMLCanvasElement): void`
