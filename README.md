@@ -71,4 +71,4 @@ c.onDrag(function (mousePos) {
 ## Development
 
 - `yarn start` to start watching source files
-- `yarn build` to build the script to `./dist`
+- Running `npm publish` will build everything before publishing
