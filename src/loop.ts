@@ -1,23 +1,14 @@
 import * as draw from './draw';
 import * as utility from './utility';
 import state from './state';
-import { RectOptions } from './ifc';
+import * as ifc from './ifc';
 
-export type LoopFunction = (currentFrame: number) => void;
-export interface LoopOptions {
-	loopFunction: LoopFunction;
-	timing?: boolean;
-	clearEachFrame?: boolean;
-	background?: string;
-	framerate?: number;
-}
-
-let loopFunction: LoopFunction;
+let loopFunction: ifc.LoopFunction;
 let timing: boolean = false;
 let clearEachFrame: boolean = false;
 let currentFrame: number = -1;
 let background: string = 'white';
-let backgroundObject: RectOptions;
+let backgroundObject: ifc.Options.Rectangle;
 let framerate: number = 1;
 let drawnBackground: boolean = false;
 let timingStart: number, timingEnd: number, timingResult: number;
@@ -25,7 +16,7 @@ let timingStart: number, timingEnd: number, timingResult: number;
 /**
  * Set a loop which will be called continuously using `requestAnimationFrame`.
  */
-export function setLoop(opts: LoopOptions) {
+export function setLoop(opts: ifc.Options.Loop) {
 	loopFunction = opts.loopFunction;
 	timing = opts.timing || false;
 	clearEachFrame = opts.clearEachFrame || false;

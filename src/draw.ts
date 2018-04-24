@@ -11,7 +11,7 @@ const PI2 = 2 * Math.PI;
 /**
  * Draw a rectange on the canvas.
  */
-export function rect(opts: ifc.RectOptions) {
+export function rect(opts: ifc.Options.Rectangle) {
 	opts.fill = opts.fill || defaults.fill;
 	opts.stroke = opts.stroke || defaults.stroke;
 
@@ -29,15 +29,14 @@ export function rect(opts: ifc.RectOptions) {
  * Draw a circle on the canvas.
  * (Actually just calls `draw.ellipse` without the `.ry` property if there is one.)
  */
-export function circle(opts: ifc.EllipseOptions) {
-	delete opts.ry;
-	ellipse(opts);
+export function circle(opts: ifc.Options.Circle) {
+	ellipse(<ifc.Options.Ellipse>opts);
 }
 
 /**
  * Draw an ellipse on the canvas.
  */
-export function ellipse(opts: ifc.EllipseOptions) {
+export function ellipse(opts: ifc.Options.Ellipse) {
 	opts.fill = opts.fill || defaults.fill;
 	opts.stroke = opts.stroke || defaults.stroke;
 	opts.ry = opts.ry || opts.rx;
@@ -54,7 +53,7 @@ export function ellipse(opts: ifc.EllipseOptions) {
 /**
  * Draw a line on the canvas.
  */
-export function line(opts: ifc.LineOptions) {
+export function line(opts: ifc.Options.Line) {
 	opts.color = opts.color || defaults.stroke;
 	opts.lineWidth = opts.lineWidth || 1;
 
@@ -71,7 +70,7 @@ export function line(opts: ifc.LineOptions) {
 /**
  * Draw text on the canvas.
  */
-export function text(opts: ifc.TextOptions) {
+export function text(opts: ifc.Options.Text) {
 	opts.color = opts.color || 'red';
 	opts.fontName = opts.fontName || 'sans-serif';
 	opts.sizePX = opts.sizePX || 12;
