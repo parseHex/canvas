@@ -10,7 +10,7 @@
 	"scripts": {
 		"start": "webpack --mode development",
 		"cleanup": "rimraf dist lib typings",
-		"build": "npm run cleanup && tsc && webpack --mode production"
+		"build": "yarn cleanup && tsc && webpack --mode production"
 	},
 	"repository": {
 		"type": "git",
