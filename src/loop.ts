@@ -41,7 +41,7 @@ export function setLoop(opts: ifc.Options.Loop) {
 		state.canvas = state.backgroundCanvas;
 		state.ctx = state.backgroundCtx;
 
-		draw.rect(backgroundObject);
+		draw.rectangle(backgroundObject);
 
 		state.canvas = realCanvas;
 		state.ctx = realCtx;
@@ -60,14 +60,17 @@ function internalLoop() {
 	if (currentFrame % framerate === 0) {
 		if (timing) timingStart = performance.now();
 
-		if (clearEachFrame) utility.clear();
-
+		// TODO not sure how to handle redrawing bg with new object api
+		if (clearEachFrame || state.objects.length > 0) utility.clear();
 		if (currentFrame === 0 && !clearEachFrame) {
-			draw.rect(backgroundObject);
+			draw.rectangle(backgroundObject);
 			drawnBackground = true;
 		}
+		if (!drawnBackground) draw.rectangle(backgroundObject);
 
-		if (!drawnBackground) draw.rect(backgroundObject);
+		if (state.objects.length > 0) {
+			drawObjects();
+		}
 
 		loopFunction(currentFrame);
 
@@ -86,3 +89,42 @@ function internalLoop() {
 	requestAnimationFrame(internalLoop);
 }
 requestAnimationFrame(internalLoop);
+
+function drawObjects() {
+	const deadObjects: number[] = [];
+
+	for (let i = 0; i < state.objects.length; i++) {
+		if (state.objects[i]._dead) {
+			deadObjects.push(i);
+			continue;
+		}
+
+		switch (state.objects[i].shape) {
+			case 'rectangle': {
+				draw.rectangle(state.objects[i].properties, true);
+				break;
+			}
+			case 'circle': {
+				draw.circle(state.objects[i].properties, true);
+				break;
+			}
+			case 'ellipse': {
+				draw.ellipse(state.objects[i].properties, true);
+				break;
+			}
+			case 'line': {
+				draw.line(state.objects[i].properties, true);
+				break;
+			}
+			case 'text': {
+				draw.text(state.objects[i].properties, true);
+				break;
+			}
+		}
+	}
+
+	// clear out dead objects
+	for (let i = deadObjects.length - 1; i >= 0; i--) {
+		state.objects.splice(deadObjects[i], 1);
+	}
+}
