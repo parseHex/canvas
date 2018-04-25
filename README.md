@@ -4,6 +4,22 @@ A library that handles common `<canvas>` tasks to make prototyping easier.
 
 It's mostly for my own use but I'm trying to keep it organized and easy to use for anyone.
 
+## Importing
+
+```javascript
+
+// ES6
+import * as c from 'proto-canvas';
+
+// CommonJS
+const c = require('proto-canvas');
+
+// Global variable via <script> tag
+// (you don't need to assign it to the `c` variable, you can use it as `protoCanvas`)
+const c = protoCanvas;
+
+```
+
 ## Example
 
 ```javascript

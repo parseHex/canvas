@@ -4,8 +4,8 @@ module.exports = (env, argv) => ({
 	entry: './src/index.ts',
 	output: {
 		path: path.resolve(__dirname, 'dist'),
-		filename: 'canvas.js',
-		library: 'canvas',
+		filename: 'proto-canvas.js',
+		library: 'protoCanvas',
 		libraryTarget: 'umd',
 		umdNamedDefine: true,
 	},
