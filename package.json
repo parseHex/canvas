@@ -1,6 +1,6 @@
 {
 	"name": "proto-canvas",
-	"version": "0.1.2",
+	"version": "0.2.0",
 	"description": "A library that handles common <canvas> tasks to make prototyping easier.",
 	"main": "dist/proto-canvas.js",
 	"module": "lib/index.js",
