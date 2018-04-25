@@ -1,10 +1,10 @@
 import * as draw from './draw';
 import * as utility from './utility';
 import state from './state';
+import * as object from './object';
 
 export { setLoop } from './loop';
-export { draw };
-export { utility };
+export { draw, object, utility };
 
 /**
  * Set the canvas element (and context) that will be used for all future operations.

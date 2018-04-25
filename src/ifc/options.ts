@@ -12,17 +12,16 @@ export interface Ellipse extends Shapes.Ellipse {
 	fill?: string;
 	stroke?: string;
 }
+export interface Line extends Shapes.Line {
+	lineWidth?: number;
+	stroke?: string;
+}
 export interface Text extends Coordinate {
 	text: string;
-	color?: string;
+	fill?: string;
+	stroke?: string;
 	fontName?: string;
 	sizePX?: number;
-}
-export interface Line {
-	point1: Coordinate;
-	point2: Coordinate;
-	lineWidth?: number;
-	color?: string;
 }
 export interface Loop {
 	loopFunction: LoopFunction;

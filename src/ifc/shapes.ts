@@ -10,3 +10,9 @@ export interface Circle extends Coordinate {
 export interface Ellipse extends Circle {
 	ry: number;
 }
+export interface Line {
+	x1: number;
+	y1: number;
+	x2: number;
+	y2: number;
+}
