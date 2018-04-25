@@ -35,6 +35,7 @@ export function triangle(opts: ifc.Options.Triangle, skipNormalize?: boolean) {
 	state.ctx.moveTo(opts.x1, opts.y1);
 	state.ctx.lineTo(opts.x2, opts.y2);
 	state.ctx.lineTo(opts.x3, opts.y3);
+	state.ctx.lineTo(opts.x1, opts.y1);
 	state.ctx.fill();
 	state.ctx.stroke();
 	state.ctx.closePath();
