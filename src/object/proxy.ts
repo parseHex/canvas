@@ -1,6 +1,3 @@
-// these are really just a mirror of the c.draw functions
-// need to figure out a more elegant way of going about this
-
 import * as ifc from '../ifc';
 import * as normalizeOpts from '../draw/normalize-opts';
 import { move, resize, recolor, deleteObj } from './object-methods';
