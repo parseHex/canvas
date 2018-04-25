@@ -6,6 +6,13 @@ export function move(this: ifc.CanvasObject, newPos: ifc.Coords) {
 		this.properties.y1 = newPos.y1;
 		this.properties.x2 = newPos.x2;
 		this.properties.y2 = newPos.y2;
+	} else if (this.shape === 'triangle') {
+		this.properties.x1 = newPos.x1;
+		this.properties.y1 = newPos.y1;
+		this.properties.x2 = newPos.x2;
+		this.properties.y2 = newPos.y2;
+		this.properties.x3 = newPos.x3;
+		this.properties.y3 = newPos.y3;
 	} else {
 		this.properties.x = newPos.x;
 		this.properties.y = newPos.y;
