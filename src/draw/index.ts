@@ -5,7 +5,7 @@ import * as normalizeOpts from './normalize-opts';
 const PI2 = 2 * Math.PI;
 
 /**
- * Draw a rectange on the canvas.
+ * Draw a rectangle on the canvas.
  */
 export function rectangle(opts: ifc.Options.Rectangle, skipNormalize?: boolean) {
 	if (!skipNormalize) opts = normalizeOpts.rectangle(opts);
