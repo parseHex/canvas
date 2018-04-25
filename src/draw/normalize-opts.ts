@@ -11,6 +11,18 @@ export function rectangle(opts: ifc.Options.Rectangle): ifc.Options.Rectangle {
 		stroke: opts.stroke || defaults.fill,
 	};
 }
+export function triangle(opts: ifc.Options.Triangle): ifc.Options.Triangle {
+	return {
+		x1: opts.x1,
+		y1: opts.y1,
+		x2: opts.x2,
+		y2: opts.y2,
+		x3: opts.x3,
+		y3: opts.y3,
+		fill: opts.fill || defaults.fill,
+		stroke: opts.stroke || defaults.fill,
+	};
+}
 export function circle(opts: ifc.Options.Circle): ifc.Options.Ellipse {
 	return {
 		x: opts.x,

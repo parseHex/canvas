@@ -16,6 +16,19 @@ export function rectangle(opts: ifc.Options.Rectangle): ifc.CanvasObject {
 	state.objects.push(newObject);
 	return newObject;
 }
+export function triangle(opts: ifc.Options.Triangle): ifc.CanvasObject {
+	const newObject = {
+		shape: 'triangle' as ifc.PossibleShapes,
+		properties: normalizeOpts.triangle(opts),
+		move,
+		resize,
+		recolor,
+		delete: deleteObj,
+		_dead: false,
+	};
+	state.objects.push(newObject);
+	return newObject;
+}
 export function circle(opts: ifc.Options.Circle) {
 	const newObject = {
 		shape: 'circle' as ifc.PossibleShapes,

@@ -23,6 +23,26 @@ export function rectangle(opts: ifc.Options.Rectangle, skipNormalize?: boolean) 
 }
 
 /**
+ * Draw a triangle on the canvas.
+ */
+export function triangle(opts: ifc.Options.Triangle, skipNormalize?: boolean) {
+	if (!skipNormalize) opts = normalizeOpts.triangle(opts);
+
+	state.ctx.fillStyle = opts.fill;
+	state.ctx.strokeStyle = opts.stroke;
+
+	state.ctx.beginPath();
+	state.ctx.moveTo(opts.x1, opts.y1);
+	state.ctx.lineTo(opts.x2, opts.y2);
+	state.ctx.lineTo(opts.x3, opts.y3);
+	state.ctx.fill();
+	state.ctx.stroke();
+	state.ctx.closePath();
+
+	return opts;
+}
+
+/**
  * Draw a circle on the canvas.
  * (Actually just calls `draw.ellipse` with the `ry` property equal to `rx`.)
  */

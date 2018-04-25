@@ -4,6 +4,10 @@ export interface Rectangle extends Shapes.Rectangle {
 	fill?: string;
 	stroke?: string;
 }
+export interface Triangle extends Shapes.Triangle {
+	fill?: string;
+	stroke?: string;
+}
 export interface Circle extends Shapes.Circle {
 	fill?: string;
 	stroke?: string;
