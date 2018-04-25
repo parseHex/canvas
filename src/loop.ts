@@ -76,12 +76,12 @@ function internalLoop() {
 
 		if (timing) {
 			timingEnd = performance.now();
-			timingResult = timingStart - timingStart;
+			timingResult = timingEnd - timingStart;
 
 			draw.text({
 				x: 5,
 				y: state.canvas.height - 5,
-				text: `Frame time: ${timingEnd.toFixed(1)}ms`,
+				text: `Frame time: ${timingResult.toFixed(1)}ms`,
 			});
 		}
 	}
