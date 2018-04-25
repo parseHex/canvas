@@ -13,7 +13,8 @@ export type LoopFunction = (currentFrame: number) => void;
  */
 export type UniversalObjectProperties = any;
 
-export type PossibleShapes = string;
+export type PossibleShapes =
+	'rectangle' | 'triangle' | 'circle' | 'ellipse' | 'line' | 'text';
 
 /**
  * `{ x: number, y: number }` for any shape except for Lines.
