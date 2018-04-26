@@ -54,5 +54,6 @@ export interface CanvasObject {
 	recolor: (newColors: Colors) => this;
 	delete: () => this;
 }
+export type CanvasColor = string | CanvasGradient | CanvasPattern;
 
 export { Shapes, Options };

@@ -1,25 +1,25 @@
-import { Coordinate, LoopFunction, Shapes } from './index';
+import { Coordinate, LoopFunction, Shapes, CanvasColor } from './index';
 
 export interface Rectangle extends Shapes.Rectangle {
-	fill?: string;
-	stroke?: string;
+	fill?: CanvasColor;
+	stroke?: CanvasColor;
 }
 export interface Triangle extends Shapes.Triangle {
-	fill?: string;
-	stroke?: string;
+	fill?: CanvasColor;
+	stroke?: CanvasColor;
 }
 export interface Ellipse extends Shapes.Ellipse {
-	fill?: string;
-	stroke?: string;
+	fill?: CanvasColor;
+	stroke?: CanvasColor;
 }
 export interface Line extends Shapes.Line {
 	lineWidth?: number;
-	stroke?: string;
+	stroke?: CanvasColor;
 }
 export interface Text extends Coordinate {
 	text: string;
-	fill?: string;
-	stroke?: string;
+	fill?: CanvasColor;
+	stroke?: CanvasColor;
 	fontName?: string;
 	sizePX?: number;
 }
@@ -27,6 +27,6 @@ export interface Loop {
 	loopFunction: LoopFunction;
 	timing?: boolean;
 	clearEachFrame?: boolean;
-	background?: string;
+	background?: CanvasColor;
 	framerate?: number;
 }

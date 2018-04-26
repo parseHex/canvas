@@ -7,7 +7,7 @@ let loopFunction: ifc.LoopFunction;
 let timing: boolean = false;
 let clearEachFrame: boolean = false;
 let currentFrame: number = -1;
-let background: string = 'white';
+let background: ifc.CanvasColor = 'white';
 let backgroundObject: ifc.Options.Rectangle;
 let framerate: number = 1;
 let drawnBackground: boolean = false;
