@@ -1,83 +1,30 @@
 import * as ifc from '../ifc';
 import * as normalizeOpts from '../draw/normalize-opts';
-import { move, resize, recolor, deleteObj } from './object-methods';
+import { Rectangle, Ellipse, Line, Text, Triangle } from './shapes';
 import state from '../state';
 
-export function rectangle(opts: ifc.Options.Rectangle): ifc.CanvasObject {
-	const newObject = {
-		shape: 'rectangle' as ifc.PossibleShapes,
-		properties: normalizeOpts.rectangle(opts),
-		move,
-		resize,
-		recolor,
-		delete: deleteObj,
-		_dead: false,
-	};
+export function rectangle(opts: ifc.Options.Rectangle): Rectangle {
+	const newObject = new Rectangle(normalizeOpts.rectangle(opts));
 	state.objects.push(newObject);
 	return newObject;
 }
-export function triangle(opts: ifc.Options.Triangle): ifc.CanvasObject {
-	const newObject = {
-		shape: 'triangle' as ifc.PossibleShapes,
-		properties: normalizeOpts.triangle(opts),
-		move,
-		resize,
-		recolor,
-		delete: deleteObj,
-		_dead: false,
-	};
+export function triangle(opts: ifc.Options.Triangle): Triangle {
+	const newObject = new Triangle(normalizeOpts.triangle(opts));
 	state.objects.push(newObject);
 	return newObject;
 }
-export function circle(opts: ifc.Options.Circle) {
-	const newObject = {
-		shape: 'circle' as ifc.PossibleShapes,
-		properties: normalizeOpts.circle(opts),
-		move,
-		resize,
-		recolor,
-		delete: deleteObj,
-		_dead: false,
-	};
+export function ellipse(opts: ifc.Options.Ellipse): Ellipse {
+	const newObject = new Ellipse(normalizeOpts.ellipse(opts));
 	state.objects.push(newObject);
 	return newObject;
 }
-export function ellipse(opts: ifc.Options.Ellipse) {
-	const newObject = {
-		shape: 'ellipse' as ifc.PossibleShapes,
-		properties: normalizeOpts.ellipse(opts),
-		move,
-		resize,
-		recolor,
-		delete: deleteObj,
-		_dead: false,
-	};
+export function line(opts: ifc.Options.Line): Line {
+	const newObject = new Line(normalizeOpts.line(opts));
 	state.objects.push(newObject);
 	return newObject;
 }
-export function line(opts: ifc.Options.Line) {
-	const newObject = {
-		shape: 'line' as ifc.PossibleShapes,
-		properties: normalizeOpts.line(opts),
-		move,
-		resize,
-		recolor,
-		delete: deleteObj,
-		_dead: false,
-	};
-	state.objects.push(newObject);
-	return newObject;
-}
-export function text(opts: ifc.Options.Text) {
-	const newObject = {
-		shape: 'text' as ifc.PossibleShapes,
-		properties: normalizeOpts.text(opts),
-		move,
-		resize,
-		recolor,
-		delete: deleteObj,
-		_dead: false,
-	};
+export function text(opts: ifc.Options.Text): Text {
+	const newObject = new Text(normalizeOpts.text(opts));
 	state.objects.push(newObject);
 	return newObject;
 }

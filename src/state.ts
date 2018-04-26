@@ -1,4 +1,5 @@
 import * as ifc from './ifc';
+import BaseObjectShape from './object/shapes/base';
 
 export interface State {
 	canvas: HTMLCanvasElement;
@@ -6,7 +7,7 @@ export interface State {
 	backgroundCanvas: HTMLCanvasElement;
 	backgroundCtx: CanvasRenderingContext2D;
 	dragging: boolean;
-	objects: ifc.CanvasObject[];
+	objects: BaseObjectShape[];
 }
 
 const state: State = {

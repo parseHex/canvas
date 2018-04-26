@@ -94,33 +94,12 @@ function drawObjects() {
 	const deadObjects: number[] = [];
 
 	for (let i = 0; i < state.objects.length; i++) {
-		if (state.objects[i]._dead) {
+		if (!state.objects[i]._alive) {
 			deadObjects.push(i);
 			continue;
 		}
 
-		switch (state.objects[i].shape) {
-			case 'rectangle': {
-				draw.rectangle(state.objects[i].properties, true);
-				break;
-			}
-			case 'triangle': {
-				draw.triangle(state.objects[i].properties, true);
-				break;
-			}
-			case 'ellipse': {
-				draw.ellipse(state.objects[i].properties, true);
-				break;
-			}
-			case 'line': {
-				draw.line(state.objects[i].properties, true);
-				break;
-			}
-			case 'text': {
-				draw.text(state.objects[i].properties, true);
-				break;
-			}
-		}
+		state.objects[i]._draw();
 	}
 
 	// clear out dead objects

@@ -8,52 +8,13 @@ export interface Coordinate {
 
 export type LoopFunction = (currentFrame: number) => void;
 
-/**
- * Options object for a shape.
- */
-export type UniversalObjectProperties = any;
+export type PossibleOptions =
+	Options.Rectangle | Options.Ellipse | Options.Triangle |
+	Options.Line | Options.Text;
 
 export type PossibleShapes =
 	'rectangle' | 'triangle' | 'ellipse' | 'line' | 'text';
 
-/**
- * `{ x: number, y: number }` for any shape except for Lines.
- *
- * `{ x: number, y: number, x2: number, y2: number }` for Lines.
- *
- * **_(WIP)_**
- */
-export type Coords = any;
-
-/**
- * `{ width?: number, height?: number }` for Rectangles.
- *
- * `{ rx?: number, ry?: number }` for Ellipses.
- *
- * `{ lineWidth: number }` for Lines.
- *
- * `{ sizePX: number }` for Text.
- *
- * **_(WIP)_**
- */
-export type Dims = any;
-
-/**
- * `{ fill?: string, stroke?: string }` for every shape except for Lines.
- *
- * `{ stroke?: string }` for Lines.
- */
-export type Colors = any;
-
-export interface CanvasObject {
-	shape: PossibleShapes;
-	properties: UniversalObjectProperties;
-	_dead: boolean;
-	move: (newPos: Coords) => this;
-	resize: (newDims: Dims) => this;
-	recolor: (newColors: Colors) => this;
-	delete: () => this;
-}
 export type CanvasColor = string | CanvasGradient | CanvasPattern;
 
 export { Shapes, Options };
