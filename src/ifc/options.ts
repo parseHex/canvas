@@ -8,10 +8,6 @@ export interface Triangle extends Shapes.Triangle {
 	fill?: string;
 	stroke?: string;
 }
-export interface Circle extends Shapes.Circle {
-	fill?: string;
-	stroke?: string;
-}
 export interface Ellipse extends Shapes.Ellipse {
 	fill?: string;
 	stroke?: string;

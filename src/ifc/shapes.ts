@@ -12,10 +12,8 @@ export interface Triangle {
 	x3: number;
 	y3: number;
 }
-export interface Circle extends Coordinate {
+export interface Ellipse extends Coordinate {
 	rx: number;
-}
-export interface Ellipse extends Circle {
 	ry: number;
 }
 export interface Line {

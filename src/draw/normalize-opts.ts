@@ -23,16 +23,6 @@ export function triangle(opts: ifc.Options.Triangle): ifc.Options.Triangle {
 		stroke: opts.stroke || defaults.fill,
 	};
 }
-export function circle(opts: ifc.Options.Circle): ifc.Options.Ellipse {
-	return {
-		x: opts.x,
-		y: opts.y,
-		rx: opts.rx,
-		ry: opts.rx,
-		fill: opts.fill || defaults.fill,
-		stroke: opts.stroke || defaults.stroke,
-	};
-}
 export function ellipse(opts: ifc.Options.Ellipse): ifc.Options.Ellipse {
 	return {
 		x: opts.x,

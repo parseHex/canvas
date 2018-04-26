@@ -44,16 +44,6 @@ export function triangle(opts: ifc.Options.Triangle, skipNormalize?: boolean) {
 }
 
 /**
- * Draw a circle on the canvas.
- * (Actually just calls `draw.ellipse` with the `ry` property equal to `rx`.)
- */
-export function circle(opts: ifc.Options.Circle, skipNormalize?: boolean) {
-	if (!skipNormalize) opts = normalizeOpts.circle(opts);
-
-	return ellipse(<ifc.Options.Ellipse>opts, true);
-}
-
-/**
  * Draw an ellipse on the canvas.
  */
 export function ellipse(opts: ifc.Options.Ellipse, skipNormalize?: boolean) {

@@ -14,7 +14,7 @@ export type LoopFunction = (currentFrame: number) => void;
 export type UniversalObjectProperties = any;
 
 export type PossibleShapes =
-	'rectangle' | 'triangle' | 'circle' | 'ellipse' | 'line' | 'text';
+	'rectangle' | 'triangle' | 'ellipse' | 'line' | 'text';
 
 /**
  * `{ x: number, y: number }` for any shape except for Lines.
@@ -27,8 +27,6 @@ export type Coords = any;
 
 /**
  * `{ width?: number, height?: number }` for Rectangles.
- *
- * `{ rx: number }` for Circles.
  *
  * `{ rx?: number, ry?: number }` for Ellipses.
  *

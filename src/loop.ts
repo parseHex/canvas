@@ -108,10 +108,6 @@ function drawObjects() {
 				draw.triangle(state.objects[i].properties, true);
 				break;
 			}
-			case 'circle': {
-				draw.circle(state.objects[i].properties, true);
-				break;
-			}
 			case 'ellipse': {
 				draw.ellipse(state.objects[i].properties, true);
 				break;
