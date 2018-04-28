@@ -77,10 +77,7 @@ c.onDrag(function (mousePos) {
 
 ## TODO
 
-- Object Manager
-	- A higher-level API to add objects (shapes, text, etc.) to the canvas that `proto-canvas` will manage the (re-)drawing/updating of.
 - More drawable shapes
-	- Triangle
 	- Polygon (generic shape)
 - Multiple canvas support
 - Ability to change origin/anchor point (e.g. set (0, 0) point to the center of the canvas and all coordinates)
