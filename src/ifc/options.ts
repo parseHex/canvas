@@ -12,6 +12,10 @@ export interface Ellipse extends Shapes.Ellipse {
 	fill?: CanvasColor;
 	stroke?: CanvasColor;
 }
+export interface Point extends Coordinate {
+	fill?: CanvasColor;
+	stroke?: CanvasColor;
+}
 export interface Line extends Shapes.Line {
 	lineWidth?: number;
 	stroke?: CanvasColor;

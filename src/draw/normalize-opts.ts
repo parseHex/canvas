@@ -54,3 +54,11 @@ export function text(opts: ifc.Options.Text): ifc.Options.Text {
 		stroke: opts.stroke || defaults.textStroke,
 	};
 }
+export function point(opts: ifc.Options.Point): ifc.Options.Point {
+	return {
+		x: opts.x,
+		y: opts.y,
+		fill: opts.fill || defaults.fill,
+		stroke: opts.stroke || defaults.stroke,
+	};
+}

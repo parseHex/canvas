@@ -10,10 +10,10 @@ export type LoopFunction = (currentFrame: number) => void;
 
 export type PossibleOptions =
 	Options.Rectangle | Options.Ellipse | Options.Triangle |
-	Options.Line | Options.Text;
+	Options.Line | Options.Text | Options.Point;
 
 export type PossibleShapes =
-	'rectangle' | 'triangle' | 'ellipse' | 'line' | 'text';
+	'rectangle' | 'triangle' | 'ellipse' | 'line' | 'text' | 'point';
 
 export type CanvasColor = string | CanvasGradient | CanvasPattern;
 
