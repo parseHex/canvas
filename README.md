@@ -89,3 +89,4 @@ c.onDrag(function (mousePos) {
 
 - `yarn start` to start watching source files
 - Running `npm publish` will build everything before publishing
+- _Note_: Rollup is kind of slow building, so I'd recommend just building before publishing and importing directly from `src` when using an example project. (**TODO** make rollup faster)

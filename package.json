@@ -2,26 +2,27 @@
 	"name": "proto-canvas",
 	"version": "0.2.0",
 	"description": "A library that handles common <canvas> tasks to make prototyping easier.",
-	"main": "dist/proto-canvas.js",
+	"browser": "dist/proto-canvas.js",
 	"module": "lib/index.js",
 	"typings": "typings/index.d.ts",
 	"author": "Thomas Mays <thomas@mindofthomas.com>",
 	"license": "MIT",
 	"scripts": {
-		"start": "webpack --mode development",
+		"start": "rollup -c -w",
 		"cleanup": "rimraf dist lib typings",
-		"prepublishOnly": "npm run cleanup && tsc && webpack --mode production"
+		"build": "rollup -c",
+		"prepublishOnly": "npm run cleanup && npm run build"
 	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/parseHex/proto-canvas.git"
 	},
 	"devDependencies": {
-		"awesome-typescript-loader": "^5.0.0",
 		"rimraf": "^2.6.2",
-		"typescript": "^2.8.1",
-		"webpack": "^4.3.0",
-		"webpack-cli": "^2.0.13"
+		"rollup": "^0.58.2",
+		"rollup-plugin-node-resolve": "^3.3.0",
+		"rollup-plugin-typescript2": "^0.13.0",
+		"typescript": "^2.8.1"
 	},
 	"dependencies": {}
 }
