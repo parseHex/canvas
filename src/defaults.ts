@@ -1,5 +1,5 @@
 export default {
-	fill: '#ECEFF1',
+	fill: '#CFD8DC',
 	textFill: 'red',
 	stroke: '#455A64',
 	textStroke: 'transparent',
