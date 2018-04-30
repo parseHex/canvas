@@ -1,12 +1,12 @@
-import { PossibleShapes, Options } from '../../ifc';
+import { Object } from '../../ifc';
 import * as draw from '../../draw';
 import BaseObjectShape from './base';
 
 export default class Text extends BaseObjectShape {
-	shape = 'text' as PossibleShapes;
-	props: Options.Text;
+	shape = 'text' as Object.Possible.ShapeLabel;
+	props: Object.Options.Text;
 
-	constructor(opts: Options.Text) {
+	constructor(opts: Object.Options.Text) {
 		super();
 
 		this.props = opts;
@@ -16,25 +16,16 @@ export default class Text extends BaseObjectShape {
 		draw.text(this.props, true);
 	}
 
-	/**
-	 * `{ x: number, y: number }`
-	 */
-	move(newPos: Partial<Options.Text>) {
-		this.props.x = newPos.x;
-		this.props.y = newPos.y;
+	move(newPos: Object.Position.Text) {
+		this.props.pos.x = newPos.x;
+		this.props.pos.y = newPos.y;
 	}
 
-	/**
-	 * `{ sizePX: number }`
-	 */
-	resize(newDims: Partial<Options.Text>) {
+	resize(newDims: Object.Dimension.Text) {
 		this.props.sizePX = newDims.sizePX;
 	}
 
-	/**
-	 * `{ fill?: CanvasColor, stroke?: CanvasColor, fontName?: string }`
-	 */
-	restyle(newColors: Partial<Options.Text>) {
+	restyle(newColors: Partial<Object.Style.Text>) {
 		if (newColors.fill !== undefined) this.props.fill = newColors.fill;
 		if (newColors.stroke !== undefined) this.props.stroke = newColors.stroke;
 		if (newColors.fontName !== undefined) this.props.fontName = newColors.fontName;

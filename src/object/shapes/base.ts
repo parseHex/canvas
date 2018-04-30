@@ -1,9 +1,9 @@
-import { PossibleShapes, PossibleOptions } from '../../ifc';
+import { Object, Coordinate } from '../../ifc';
 
 export default abstract class BaseObjectShape {
-	public readonly shape: PossibleShapes;
+	public readonly shape: Object.Possible.ShapeLabel;
 	public _alive: boolean = true;
-	public props: PossibleOptions;
+	public props: Object.Possible.Option;
 
 	/**
 	 * Draws this object to the canvas.
@@ -12,9 +12,9 @@ export default abstract class BaseObjectShape {
 	 */
 	abstract _draw(): void;
 
-	abstract move(newPos: Partial<PossibleOptions>): void;
-	abstract resize(newDims: Partial<PossibleOptions>): void;
-	abstract restyle(newColors: Partial<PossibleOptions>): void;
+	abstract move(newPos: Object.Possible.Position): void;
+	abstract resize(newDims: Object.Possible.Dimension): void;
+	abstract restyle(newColors: Partial<Object.Possible.Style>): void;
 
 	/**
 	 * Flags object for deletion. It will be cleared on the next frame.

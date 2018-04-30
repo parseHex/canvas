@@ -1,20 +1,16 @@
-import * as Shapes from './shapes';
-import * as Options from './options';
+import * as Object from './object';
+import * as Loop from './loop';
 
 export interface Coordinate {
 	x: number;
 	y: number;
 }
 
-export type LoopFunction = (currentFrame: number) => void;
-
-export type PossibleOptions =
-	Options.Rectangle | Options.Ellipse | Options.Triangle |
-	Options.Line | Options.Text | Options.Point;
-
-export type PossibleShapes =
-	'rectangle' | 'triangle' | 'ellipse' | 'line' | 'text' | 'point';
+export interface FillAndStroke {
+	fill: CanvasColor;
+	stroke: CanvasColor;
+}
 
 export type CanvasColor = string | CanvasGradient | CanvasPattern;
 
-export { Shapes, Options };
+export { Loop, Object };

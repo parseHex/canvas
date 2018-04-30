@@ -1,12 +1,12 @@
-import { PossibleShapes, Options } from '../../ifc';
+import { Object } from '../../ifc';
 import * as draw from '../../draw';
 import BaseObjectShape from './base';
 
 export default class Line extends BaseObjectShape {
-	shape = 'line' as PossibleShapes;
-	props: Options.Line;
+	shape = 'line' as Object.Possible.ShapeLabel;
+	props: Object.Options.Line;
 
-	constructor(opts: Options.Line) {
+	constructor(opts: Object.Options.Line) {
 		super();
 
 		this.props = opts;
@@ -16,27 +16,18 @@ export default class Line extends BaseObjectShape {
 		draw.line(this.props, true);
 	}
 
-	/**
-	 * `{ x1: number, y1: number, x2: number, y2: number }`
-	 */
-	move(newPos: Partial<Options.Line>) {
-		this.props.x1 = newPos.x1;
-		this.props.y1 = newPos.y1;
-		this.props.x2 = newPos.x2;
-		this.props.y2 = newPos.y2;
+	move(newPos: Object.Position.Line) {
+		for (let i = 0; i < newPos.length; i++) {
+			this.props.pos[i].x = newPos[i].x;
+			this.props.pos[i].y = newPos[i].y;
+		}
 	}
 
-	/**
-	 * `{ lineWidth: number }`
-	 */
-	resize(newDims: Partial<Options.Line>) {
+	resize(newDims: Object.Dimension.Line) {
 		this.props.lineWidth = newDims.lineWidth;
 	}
 
-	/**
-	 * `{ stroke: CanvasColor }`
-	 */
-	restyle(newColors: Partial<Options.Line>) {
+	restyle(newColors: Object.Style.Line) {
 		this.props.stroke = newColors.stroke;
 	}
 

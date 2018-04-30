@@ -1,12 +1,12 @@
-import { PossibleShapes, Options } from '../../ifc';
+import { Object, Coordinate } from '../../ifc';
 import * as draw from '../../draw';
 import BaseObjectShape from './base';
 
 export default class Ellipse extends BaseObjectShape {
-	shape = 'ellipse' as PossibleShapes;
-	props: Options.Ellipse;
+	shape = 'ellipse' as Object.Possible.ShapeLabel;
+	props: Object.Options.Ellipse;
 
-	constructor(opts: Options.Ellipse) {
+	constructor(opts: Object.Options.Ellipse) {
 		super();
 
 		this.props = opts;
@@ -16,26 +16,17 @@ export default class Ellipse extends BaseObjectShape {
 		draw.ellipse(this.props, true);
 	}
 
-	/**
-	 * `{ x: number, y: number }`
-	 */
-	move(newPos: Partial<Options.Ellipse>) {
-		this.props.x = newPos.x;
-		this.props.y = newPos.y;
+	move(newPos: Object.Position.Ellipse) {
+		this.props.pos.x = newPos.x;
+		this.props.pos.y = newPos.y;
 	}
 
-	/**
-	 * `{ rx: number, ry: number }`
-	 */
-	resize(newDims: Partial<Options.Ellipse>) {
+	resize(newDims: Object.Dimension.Ellipse) {
 		this.props.rx = newDims.rx;
 		this.props.ry = newDims.ry;
 	}
 
-	/**
-	 * `{ fill?: CanvasColor, stroke?: CanvasColor }`
-	 */
-	restyle(newColors: Partial<Options.Ellipse>) {
+	restyle(newColors: Partial<Object.Style.Ellipse>) {
 		if (newColors.fill !== undefined) this.props.fill = newColors.fill;
 		if (newColors.stroke !== undefined) this.props.stroke = newColors.stroke;
 	}

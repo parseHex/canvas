@@ -1,19 +1,21 @@
-import { PossibleShapes, Options } from '../../ifc';
+import { Object } from '../../ifc';
 import * as draw from '../../draw';
 import BaseObjectShape from './base';
 
 export default class Point extends BaseObjectShape {
-	shape = 'point' as PossibleShapes;
-	props: Options.Point;
-	private fixedProps: Options.Ellipse;
+	shape = 'point' as Object.Possible.ShapeLabel;
+	props: Object.Options.Point;
+	private fixedProps: Object.Options.Ellipse;
 
-	constructor(opts: Options.Point) {
+	constructor(opts: Object.Options.Point) {
 		super();
 
 		this.props = opts;
 		this.fixedProps = {
-			x: this.props.x,
-			y: this.props.y,
+			pos: {
+				x: this.props.pos.x,
+				y: this.props.pos.y,
+			},
 			rx: 1,
 			ry: 1,
 			fill: this.props.fill,
@@ -25,27 +27,21 @@ export default class Point extends BaseObjectShape {
 		draw.ellipse(this.fixedProps, true);
 	}
 
-	/**
-	 * `{ x: number, y: number }`
-	 */
-	move(newPos: Partial<Options.Point>) {
-		this.props.x = newPos.x;
-		this.props.y = newPos.y;
-		this.fixedProps.x = newPos.x;
-		this.fixedProps.y = newPos.y;
+	move(newPos: Object.Position.Point) {
+		this.props.pos.x = newPos.x;
+		this.props.pos.y = newPos.y;
+		this.fixedProps.pos.x = newPos.x;
+		this.fixedProps.pos.y = newPos.y;
 	}
 
 	/**
 	 * No-Op: Can't resize a point since it's just an Ellipse with a radius of 1.
 	 */
-	resize(newDims: Partial<Options.Point>) {
+	resize(newDims: null) {
 		console.error('Cannot resize a point, it has a fixed size.');
 	}
 
-	/**
-	 * `{ fill?: CanvasColor, stroke?: CanvasColor }`
-	 */
-	restyle(newColors: Partial<Options.Point>) {
+	restyle(newColors: Partial<Object.Options.Point>) {
 		if (newColors.fill !== undefined) {
 			this.props.fill = newColors.fill;
 			this.fixedProps.fill = newColors.fill;

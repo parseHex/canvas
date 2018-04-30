@@ -3,12 +3,12 @@ import * as utility from './utility';
 import state from './state';
 import * as ifc from './ifc';
 
-let loopFunction: ifc.LoopFunction;
+let loopFunction: ifc.Loop.Function;
 let timing: boolean = false;
 let clearEachFrame: boolean = false;
 let currentFrame: number = -1;
 let background: ifc.CanvasColor = 'white';
-let backgroundObject: ifc.Options.Rectangle;
+let backgroundObject: ifc.Object.Options.Rectangle;
 let framerate: number = 1;
 let drawnBackground: boolean = false;
 let timingStart: number, timingEnd: number, timingResult: number;
@@ -16,7 +16,7 @@ let timingStart: number, timingEnd: number, timingResult: number;
 /**
  * Set a loop which will be called continuously using `requestAnimationFrame`.
  */
-export function setLoop(opts: ifc.Options.Loop) {
+export function setLoop(opts: ifc.Loop.Options) {
 	loopFunction = opts.loopFunction;
 	timing = opts.timing || false;
 	clearEachFrame = opts.clearEachFrame || false;
@@ -24,8 +24,10 @@ export function setLoop(opts: ifc.Options.Loop) {
 	framerate = Math.floor(60 / (opts.framerate || 60));
 
 	backgroundObject = {
-		x: 0,
-		y: 0,
+		pos: {
+			x: 0,
+			y: 0,
+		},
 		width: state.canvas.width,
 		height: state.canvas.height,
 		stroke: 'transparent',
@@ -79,8 +81,10 @@ function internalLoop() {
 			timingResult = timingEnd - timingStart;
 
 			draw.text({
-				x: 5,
-				y: state.canvas.height - 5,
+				pos: {
+					x: 5,
+					y: state.canvas.height - 5,
+				},
 				text: `Frame time: ${timingResult.toFixed(1)}ms`,
 			});
 		}
