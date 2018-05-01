@@ -92,3 +92,23 @@ export function text(opts: ifc.Object.PartialOptions.Text, skipNormalize?: boole
 
 	return opts;
 }
+
+/**
+ * Draw an arbitrary polygon with any number of vertices on the canvas.
+ */
+export function polygon(opts: ifc.Object.PartialOptions.Polygon, skipNormalize?: boolean) {
+	if (!skipNormalize) opts = normalizeOpts.polygon(opts);
+
+	state.ctx.fillStyle = opts.fill;
+	state.ctx.strokeStyle = opts.stroke;
+
+	state.ctx.beginPath();
+	state.ctx.moveTo(opts.pos[0].x, opts.pos[0].y);
+	for (let i = 1; i < opts.pos.length; i++) {
+		state.ctx.lineTo(opts.pos[i].x, opts.pos[i].y);
+	}
+	state.ctx.lineTo(opts.pos[0].x, opts.pos[0].y);
+	state.ctx.closePath();
+
+	return opts;
+}

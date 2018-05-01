@@ -30,3 +30,6 @@ export type Point =
 	{ pos: Position.Point } &
 	Partial<Style.Point>;
 
+export type Polygon =
+	{ pos: Position.Polygon } &
+	Partial<Style.Polygon>;

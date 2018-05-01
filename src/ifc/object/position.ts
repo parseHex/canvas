@@ -6,3 +6,4 @@ export type Point = Coordinate;
 export type Text = Coordinate;
 export type Line = [Coordinate, Coordinate];
 export type Triangle = [Coordinate, Coordinate, Coordinate];
+export type Polygon = Coordinate[];

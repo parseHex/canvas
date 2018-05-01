@@ -33,3 +33,8 @@ export function point(opts: ifc.Object.PartialOptions.Point): objects.Point {
 	state.objects.push(newObject);
 	return newObject;
 }
+export function polygon(opts: ifc.Object.PartialOptions.Polygon): objects.Polygon {
+	const newObject = new objects.Polygon(normalizeOpts.polygon(opts));
+	state.objects.push(newObject);
+	return newObject;
+}

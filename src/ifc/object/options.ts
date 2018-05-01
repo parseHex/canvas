@@ -11,6 +11,9 @@ export interface Triangle extends Style.Triangle {
 export interface Ellipse extends Dimension.Ellipse, Style.Ellipse {
 	pos: Position.Ellipse;
 }
+export interface Polygon extends Style.Polygon {
+	pos: Position.Polygon;
+}
 export interface Line extends Dimension.Line, Style.Line {
 	pos: Position.Line;
 }

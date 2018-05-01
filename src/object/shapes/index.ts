@@ -5,3 +5,4 @@ export { default as Text } from './text';
 export { default as Line } from './line';
 export { default as Triangle } from './triangle';
 export { default as Point } from './point';
+export { default as Polygon } from './polygon';

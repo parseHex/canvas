@@ -57,6 +57,22 @@ export function point(opts: ifc.Object.PartialOptions.Point): ifc.Object.Options
 		stroke: opts.stroke || defaults.stroke,
 	};
 }
+export function polygon(opts: ifc.Object.PartialOptions.Polygon): ifc.Object.Options.Polygon {
+	return {
+		pos: copyPosArr(opts.pos),
+		fill: opts.fill || defaults.fill,
+		stroke: opts.stroke || defaults.stroke,
+	};
+}
+
+// cant get this to work on anything other than polygon (since other shapes have fixed length of pos)
+function copyPosArr(posArr: ifc.Coordinate[]) {
+	const arr = [];
+	for (let i = 0; i < posArr.length; i++) {
+		arr.push(copyPos(posArr[i]));
+	}
+	return arr;
+}
 
 function copyPos(posObject: ifc.Coordinate) {
 	return {
