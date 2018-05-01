@@ -16,6 +16,9 @@ export default class Polygon extends BaseObjectShape {
 		draw.polygon(this.props, true);
 	}
 
+	/**
+	 * Change the position of the polygon by moving each of its points.
+	 */
 	move(newPos: Object.Position.Polygon) {
 		for (let i = 0; i < newPos.length; i++) {
 			this.props.pos[i].x = newPos[i].x;
@@ -26,13 +29,16 @@ export default class Polygon extends BaseObjectShape {
 	/**
 	 * No-Op: Can't resize polygons, must manually move each point using `.move()`
 	 */
-	resize(newDims: null) {
+	resize(newDim: null) {
 		console.error('Cannot resize a polygon, use `.move()` instead.');
 	}
 
-	restyle(newColors: Partial<Object.Style.Polygon>) {
-		if (newColors.fill !== undefined) this.props.fill = newColors.fill;
-		if (newColors.stroke !== undefined) this.props.stroke = newColors.stroke;
+	/**
+	 * Change the polygon's `fill` and/or `stroke`.
+	 */
+	restyle(newStyle: Partial<Object.Style.Polygon>) {
+		if (newStyle.fill !== undefined) this.props.fill = newStyle.fill;
+		if (newStyle.stroke !== undefined) this.props.stroke = newStyle.stroke;
 	}
 
 	delete() {

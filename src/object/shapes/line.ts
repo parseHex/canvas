@@ -16,6 +16,9 @@ export default class Line extends BaseObjectShape {
 		draw.line(this.props, true);
 	}
 
+	/**
+	 * Change the position of the line by moving each of its points.
+	 */
 	move(newPos: Object.Position.Line) {
 		for (let i = 0; i < newPos.length; i++) {
 			this.props.pos[i].x = newPos[i].x;
@@ -23,12 +26,18 @@ export default class Line extends BaseObjectShape {
 		}
 	}
 
-	resize(newDims: Object.Dimension.Line) {
-		this.props.lineWidth = newDims.lineWidth;
+	/**
+	 * Change the line's `lineWidth`.
+	 */
+	resize(newDim: Object.Dimension.Line) {
+		this.props.lineWidth = newDim.lineWidth;
 	}
 
-	restyle(newColors: Object.Style.Line) {
-		this.props.stroke = newColors.stroke;
+	/**
+	 * Change the line's `stroke`.
+	 */
+	restyle(newStyle: Object.Style.Line) {
+		this.props.stroke = newStyle.stroke;
 	}
 
 	delete() {

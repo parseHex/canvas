@@ -37,18 +37,21 @@ export default class Point extends BaseObjectShape {
 	/**
 	 * No-Op: Can't resize a point since it's just an Ellipse with a radius of 1.
 	 */
-	resize(newDims: null) {
+	resize(newDim: null) {
 		console.error('Cannot resize a point, it has a fixed size.');
 	}
 
-	restyle(newColors: Partial<Object.Options.Point>) {
-		if (newColors.fill !== undefined) {
-			this.props.fill = newColors.fill;
-			this.fixedProps.fill = newColors.fill;
+	/**
+	 * Change the point's `fill` and/or `stroke`.
+	 */
+	restyle(newStyle: Partial<Object.Options.Point>) {
+		if (newStyle.fill !== undefined) {
+			this.props.fill = newStyle.fill;
+			this.fixedProps.fill = newStyle.fill;
 		}
-		if (newColors.stroke !== undefined) {
-			this.props.stroke = newColors.stroke;
-			this.fixedProps.stroke = newColors.stroke;
+		if (newStyle.stroke !== undefined) {
+			this.props.stroke = newStyle.stroke;
+			this.fixedProps.stroke = newStyle.stroke;
 		}
 	}
 

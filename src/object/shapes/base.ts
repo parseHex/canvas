@@ -12,9 +12,20 @@ export default abstract class BaseObjectShape {
 	 */
 	abstract _draw(): void;
 
+	/**
+	 * Move this object to a specific Coordinate(s).
+	 */
 	abstract move(newPos: Object.Possible.Position): void;
+
+	/**
+	 * Change the dimensions of this object.
+	 */
 	abstract resize(newDims: Object.Possible.Dimension): void;
-	abstract restyle(newColors: Partial<Object.Possible.Style>): void;
+
+	/**
+	 * Change the style of this object.
+	 */
+	abstract restyle(newStyle: Partial<Object.Possible.Style>): void;
 
 	/**
 	 * Flags object for deletion. It will be cleared on the next frame.

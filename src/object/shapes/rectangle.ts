@@ -21,14 +21,20 @@ export default class Rectangle extends BaseObjectShape {
 		this.props.pos.y = newPos.y;
 	}
 
-	resize(newDims: Object.Dimension.Rectangle) {
-		this.props.width = newDims.width;
-		this.props.height = newDims.height;
+	/**
+	 * Change the rectangle's `width` and `height`.
+	 */
+	resize(newDim: Object.Dimension.Rectangle) {
+		this.props.width = newDim.width;
+		this.props.height = newDim.height;
 	}
 
-	restyle(newColors: Partial<Object.Style.Rectangle>) {
-		if (newColors.fill !== undefined) this.props.fill = newColors.fill;
-		if (newColors.stroke !== undefined) this.props.stroke = newColors.stroke;
+	/**
+	 * Change the rectangle's `fill` and/or `stroke`.
+	 */
+	restyle(newStyle: Partial<Object.Style.Rectangle>) {
+		if (newStyle.fill !== undefined) this.props.fill = newStyle.fill;
+		if (newStyle.stroke !== undefined) this.props.stroke = newStyle.stroke;
 	}
 
 	delete() {

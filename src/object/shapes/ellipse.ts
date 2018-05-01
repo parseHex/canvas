@@ -21,14 +21,20 @@ export default class Ellipse extends BaseObjectShape {
 		this.props.pos.y = newPos.y;
 	}
 
-	resize(newDims: Object.Dimension.Ellipse) {
-		this.props.rx = newDims.rx;
-		this.props.ry = newDims.ry;
+	/**
+	 * Change the ellipse's `rx` (radius-x) and `ry` (radius-y).
+	 */
+	resize(newDim: Object.Dimension.Ellipse) {
+		this.props.rx = newDim.rx;
+		this.props.ry = newDim.ry;
 	}
 
-	restyle(newColors: Partial<Object.Style.Ellipse>) {
-		if (newColors.fill !== undefined) this.props.fill = newColors.fill;
-		if (newColors.stroke !== undefined) this.props.stroke = newColors.stroke;
+	/**
+	 * Change the ellipse's `fill` and/or `stroke`.
+	 */
+	restyle(newStyle: Partial<Object.Style.Ellipse>) {
+		if (newStyle.fill !== undefined) this.props.fill = newStyle.fill;
+		if (newStyle.stroke !== undefined) this.props.stroke = newStyle.stroke;
 	}
 
 	delete() {

@@ -21,14 +21,27 @@ export default class Text extends BaseObjectShape {
 		this.props.pos.y = newPos.y;
 	}
 
-	resize(newDims: Object.Dimension.Text) {
-		this.props.sizePX = newDims.sizePX;
+	/**
+	 * Change the text's `sizePX` (size in pixels).
+	 */
+	resize(newDim: Object.Dimension.Text) {
+		this.props.sizePX = newDim.sizePX;
 	}
 
-	restyle(newColors: Partial<Object.Style.Text>) {
-		if (newColors.fill !== undefined) this.props.fill = newColors.fill;
-		if (newColors.stroke !== undefined) this.props.stroke = newColors.stroke;
-		if (newColors.fontName !== undefined) this.props.fontName = newColors.fontName;
+	/**
+	 * Change the text's `fill` and/or `stroke` and/or `fontName`.
+	 */
+	restyle(newStyle: Partial<Object.Style.Text>) {
+		if (newStyle.fill !== undefined) this.props.fill = newStyle.fill;
+		if (newStyle.stroke !== undefined) this.props.stroke = newStyle.stroke;
+		if (newStyle.fontName !== undefined) this.props.fontName = newStyle.fontName;
+	}
+
+	/**
+	 * Change the text's `text`.
+	 */
+	retype(newText: string) {
+		this.props.text = newText;
 	}
 
 	delete() {
