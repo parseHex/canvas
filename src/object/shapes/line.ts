@@ -1,6 +1,6 @@
 import { Object } from '../../ifc';
 import * as draw from '../../draw';
-import BaseObjectShape from './base';
+import BaseObjectShape from './_base';
 
 export default class Line extends BaseObjectShape {
 	shape = 'line' as Object.Possible.ShapeLabel;
@@ -38,9 +38,5 @@ export default class Line extends BaseObjectShape {
 	 */
 	restyle(newStyle: Object.Style.Line) {
 		this.props.stroke = newStyle.stroke;
-	}
-
-	delete() {
-		this._alive = false;
 	}
 }

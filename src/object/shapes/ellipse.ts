@@ -1,6 +1,6 @@
 import { Object, Coordinate } from '../../ifc';
 import * as draw from '../../draw';
-import BaseObjectShape from './base';
+import BaseObjectShape from './_base';
 
 export default class Ellipse extends BaseObjectShape {
 	shape = 'ellipse' as Object.Possible.ShapeLabel;
@@ -35,9 +35,5 @@ export default class Ellipse extends BaseObjectShape {
 	restyle(newStyle: Partial<Object.Style.Ellipse>) {
 		if (newStyle.fill !== undefined) this.props.fill = newStyle.fill;
 		if (newStyle.stroke !== undefined) this.props.stroke = newStyle.stroke;
-	}
-
-	delete() {
-		this._alive = false;
 	}
 }

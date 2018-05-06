@@ -1,14 +1,14 @@
 import { Object, Coordinate } from '../../ifc';
 
-export default abstract class BaseObjectShape {
+export default abstract class AbstractObjectShape {
 	public readonly shape: Object.Possible.ShapeLabel;
 	public _alive: boolean = true;
 	public props: Object.Possible.Option;
 
 	/**
-	 * Draws this object to the canvas.
+	 * **INTERNAL FUNCTION**
 	 *
-	 * **This is an internal function**: you don't ever need to call this but go ahead if you really want to.
+	 * Draws this object to the canvas.
 	 */
 	abstract _draw(): void;
 

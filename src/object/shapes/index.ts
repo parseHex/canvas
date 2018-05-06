@@ -1,4 +1,4 @@
-export { default as BaseObject } from './base';
+export { default as BaseObject } from './_base';
 export { default as Rectangle } from './rectangle';
 export { default as Ellipse } from './ellipse';
 export { default as Text } from './text';

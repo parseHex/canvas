@@ -1,6 +1,6 @@
 import { Object } from '../../ifc';
 import * as draw from '../../draw';
-import BaseObjectShape from './base';
+import BaseObjectShape from './_base';
 
 export default class Text extends BaseObjectShape {
 	shape = 'text' as Object.Possible.ShapeLabel;
@@ -42,9 +42,5 @@ export default class Text extends BaseObjectShape {
 	 */
 	retype(newText: string) {
 		this.props.text = newText;
-	}
-
-	delete() {
-		this._alive = false;
 	}
 }

@@ -1,5 +1,5 @@
 import { Object } from '../../ifc';
-import BaseObjectShape from './base';
+import BaseObjectShape from './_base';
 import * as draw from '../../draw';
 
 export default class Rectangle extends BaseObjectShape {
@@ -35,9 +35,5 @@ export default class Rectangle extends BaseObjectShape {
 	restyle(newStyle: Partial<Object.Style.Rectangle>) {
 		if (newStyle.fill !== undefined) this.props.fill = newStyle.fill;
 		if (newStyle.stroke !== undefined) this.props.stroke = newStyle.stroke;
-	}
-
-	delete() {
-		this._alive = false;
 	}
 }

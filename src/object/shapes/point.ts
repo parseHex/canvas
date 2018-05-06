@@ -1,6 +1,6 @@
 import { Object } from '../../ifc';
 import * as draw from '../../draw';
-import BaseObjectShape from './base';
+import BaseObjectShape from './_base';
 
 export default class Point extends BaseObjectShape {
 	shape = 'point' as Object.Possible.ShapeLabel;
@@ -53,9 +53,5 @@ export default class Point extends BaseObjectShape {
 			this.props.stroke = newStyle.stroke;
 			this.fixedProps.stroke = newStyle.stroke;
 		}
-	}
-
-	delete() {
-		this._alive = false;
 	}
 }

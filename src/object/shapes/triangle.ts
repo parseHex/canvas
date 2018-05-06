@@ -1,6 +1,6 @@
 import { Object } from '../../ifc';
 import * as draw from '../../draw';
-import BaseObjectShape from './base';
+import BaseObjectShape from './_base';
 
 export default class Triangle extends BaseObjectShape {
 	shape = 'triangle' as Object.Possible.ShapeLabel;
@@ -39,9 +39,5 @@ export default class Triangle extends BaseObjectShape {
 	restyle(newStyle: Partial<Object.Style.Triangle>) {
 		if (newStyle.fill !== undefined) this.props.fill = newStyle.fill;
 		if (newStyle.stroke !== undefined) this.props.stroke = newStyle.stroke;
-	}
-
-	delete() {
-		this._alive = false;
 	}
 }
