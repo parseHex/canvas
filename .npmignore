@@ -1,3 +1,5 @@
 src
-webpack.config.js
+rollup.config.js
 tsconfig.json
+.rpt2_cache
+*.log
