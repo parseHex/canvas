@@ -12,11 +12,11 @@
 	"module": "lib/index.js",
 	"types": "types/index.d.ts",
 	"scripts": {
-		"start": "rollup -c -w",
+		"start": "rollup -w -c ./config/rollup.config.js",
 		"clean": "rimraf dist lib types",
-		"build": "npm run clean && NODE_ENV=production rollup -c",
+		"build": "npm run clean && NODE_ENV=production rollup -c ./config/rollup.config.js",
 		"prepublishOnly": "npm run build",
-		"docs": "rimraf docs && typedoc --out docs --target es6 --theme minimal --mode file src"
+		"docs": "rimraf docs && typedoc --options ./config/typedoc.js --out ./docs ./src/index.ts"
 	},
 	"devDependencies": {
 		"rimraf": "^2.6.2",
@@ -26,6 +26,5 @@
 		"rollup-plugin-typescript2": "^0.13.0",
 		"typedoc": "^0.12.0",
 		"typescript": "^3.0.3"
-	},
-	"dependencies": {}
+	}
 }
