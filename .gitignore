@@ -1,6 +1,6 @@
 node_modules
 *.log
 dist
-typings
+types
 lib
 .rpt2_cache

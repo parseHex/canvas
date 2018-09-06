@@ -11,7 +11,7 @@
 		"outDir": "lib",
 		"noImplicitAny": true,
 		"declaration": true,
-		"declarationDir": "typings",
+		"declarationDir": "types",
 		"target": "es5",
 		"sourceMap": true
 	},
