@@ -15,7 +15,7 @@
 
 	"scripts": {
 		"start": "rollup -c -w",
-		"cleanup": "rimraf dist lib typings",
+		"cleanup": "rimraf dist lib types",
 		"build": "NODE_ENV=production rollup -c",
 		"prepublishOnly": "npm run cleanup && npm run build"
 	},
