@@ -80,10 +80,12 @@ c.onDrag(function (mousePos) {
 - More drawable shapes
 	- Polygon (generic shape)
 - Multiple canvas support
-- Ability to change origin/anchor point (e.g. set (0, 0) point to the center of the canvas and all coordinates)
 
 ## Development
 
-- `yarn start` to start watching source files
-- Running `npm publish` will build everything before publishing
-- _Note_: Rollup is kind of slow building, so I'd recommend just building before publishing and importing directly from `src` when using an example project. (**TODO** make rollup faster)
+Scripts:
+
+- `start` watches for changes and builds to `lib/`.
+- `build`
+- `docs` builds documentation using TypeDoc.
+- `clean`
