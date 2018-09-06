@@ -2,8 +2,12 @@ import resolve from 'rollup-plugin-node-resolve';
 import typescript from 'rollup-plugin-typescript2';
 import pkg from './package.json';
 
+// Note: I tried uglify plugin and it wouldn't do anything, so I'm using babel-minify instead
+import minify from 'rollup-plugin-babel-minify';
+
 const isProd = process.env.NODE_ENV === 'production';
 
+const input = './src/index.ts';
 const tsConfig = {
 	useTsconfigDeclarationDir: true,
 };
@@ -15,7 +19,7 @@ const plugins = [
 
 const outputs = [
 	{
-		input: 'src/index.ts',
+		input,
 		output: {
 			file: pkg.module,
 			format: 'es',
@@ -27,7 +31,7 @@ const outputs = [
 
 if (isProd) {
 	outputs.push({
-		input: 'src/index.ts',
+		input,
 		output: {
 			name: 'protoCanvas',
 			file: pkg.browser,
@@ -35,6 +39,21 @@ if (isProd) {
 			sourcemap,
 		},
 		plugins,
+	});
+	outputs.push({
+		input,
+		output: {
+			name: 'protoCanvas',
+			file: pkg.browser.replace('.js', '.min.js'),
+			format: 'umd',
+		},
+		plugins: [
+			...plugins,
+			minify({
+				comments: false,
+				sourceMap: false,
+			}),
+		],
 	});
 }
 
