@@ -1,5 +1,4 @@
-import * as ifc from './ifc';
-import BaseObjectShape from './object/shapes/base';
+import BaseObjectShape from './object/shapes/_base';
 
 export interface State {
 	canvas: HTMLCanvasElement;
