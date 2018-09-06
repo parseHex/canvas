@@ -14,8 +14,8 @@
 	"scripts": {
 		"start": "rollup -c -w",
 		"clean": "rimraf dist lib types",
-		"build": "NODE_ENV=production rollup -c",
-		"prepublishOnly": "npm run clean && npm run build"
+		"build": "npm run clean && NODE_ENV=production rollup -c",
+		"prepublishOnly": "npm run build"
 	},
 	"devDependencies": {
 		"rimraf": "^2.6.2",
