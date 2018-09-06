@@ -23,7 +23,7 @@
 		"rollup-plugin-babel-minify": "^6.0.0",
 		"rollup-plugin-node-resolve": "^3.3.0",
 		"rollup-plugin-typescript2": "^0.13.0",
-		"typescript": "^2.8.1"
+		"typescript": "^3.0.3"
 	},
 	"dependencies": {}
 }
