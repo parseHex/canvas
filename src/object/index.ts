@@ -1,8 +1,6 @@
-import state from '../state';
-import * as ifc from '../ifc';
 import { BaseObject } from './shapes';
 
-export function at(pos: ifc.Coordinate): BaseObject[] {
+export function at(pos: Coordinate): BaseObject[] {
 	// return object(s) at coordinate
 	return [];
 }

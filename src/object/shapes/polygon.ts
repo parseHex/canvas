@@ -1,12 +1,11 @@
-import { Object } from '../../ifc';
 import * as draw from '../../draw';
 import BaseObjectShape from './_base';
 
 export default class Polygon extends BaseObjectShape {
-	shape = 'polygon' as Object.Possible.ShapeLabel;
-	props: Object.Options.Polygon;
+	shape = 'polygon' as Possible.ShapeLabel;
+	props: ObjectOptions.Polygon;
 
-	constructor(opts: Object.Options.Polygon) {
+	constructor(opts: ObjectOptions.Polygon) {
 		super();
 
 		this.props = opts;
@@ -19,7 +18,7 @@ export default class Polygon extends BaseObjectShape {
 	/**
 	 * Change the position of the polygon by moving each of its points.
 	 */
-	move(newPos: Object.Position.Polygon) {
+	move(newPos: ObjectPosition.Polygon) {
 		for (let i = 0; i < newPos.length; i++) {
 			this.props.pos[i].x = newPos[i].x;
 			this.props.pos[i].y = newPos[i].y;
@@ -36,7 +35,7 @@ export default class Polygon extends BaseObjectShape {
 	/**
 	 * Change the polygon's `fill` and/or `stroke`.
 	 */
-	restyle(newStyle: Partial<Object.Style.Polygon>) {
+	restyle(newStyle: Partial<ObjectStyle.Polygon>) {
 		if (newStyle.fill !== undefined) this.props.fill = newStyle.fill;
 		if (newStyle.stroke !== undefined) this.props.stroke = newStyle.stroke;
 	}

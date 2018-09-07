@@ -1,12 +1,11 @@
-import { Object } from '../../ifc';
 import BaseObjectShape from './_base';
 import * as draw from '../../draw';
 
 export default class Rectangle extends BaseObjectShape {
-	shape = 'rectangle' as Object.Possible.ShapeLabel;
-	props: Object.Options.Rectangle;
+	shape = 'rectangle' as Possible.ShapeLabel;
+	props: ObjectOptions.Rectangle;
 
-	constructor(opts: Object.Options.Rectangle) {
+	constructor(opts: ObjectOptions.Rectangle) {
 		super();
 
 		this.props = opts;
@@ -16,7 +15,7 @@ export default class Rectangle extends BaseObjectShape {
 		draw.rectangle(this.props, true);
 	}
 
-	move(newPos: Object.Position.Rectangle) {
+	move(newPos: ObjectPosition.Rectangle) {
 		this.props.pos.x = newPos.x;
 		this.props.pos.y = newPos.y;
 	}
@@ -24,7 +23,7 @@ export default class Rectangle extends BaseObjectShape {
 	/**
 	 * Change the rectangle's `width` and `height`.
 	 */
-	resize(newDim: Object.Dimension.Rectangle) {
+	resize(newDim: ObjectDimensions.Rectangle) {
 		this.props.width = newDim.width;
 		this.props.height = newDim.height;
 	}
@@ -32,7 +31,7 @@ export default class Rectangle extends BaseObjectShape {
 	/**
 	 * Change the rectangle's `fill` and/or `stroke`.
 	 */
-	restyle(newStyle: Partial<Object.Style.Rectangle>) {
+	restyle(newStyle: Partial<ObjectStyle.Rectangle>) {
 		if (newStyle.fill !== undefined) this.props.fill = newStyle.fill;
 		if (newStyle.stroke !== undefined) this.props.stroke = newStyle.stroke;
 	}

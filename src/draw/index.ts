@@ -1,4 +1,3 @@
-import * as ifc from '../ifc';
 import state from '../state';
 import * as normalizeOpts from './normalize-opts';
 
@@ -7,7 +6,7 @@ const PI2 = 2 * Math.PI;
 /**
  * Draw a rectangle on the canvas.
  */
-export function rectangle(opts: ifc.Object.PartialOptions.Rectangle, skipNormalize?: boolean) {
+export function rectangle(opts: ObjectPartialOptions.Rectangle, skipNormalize?: boolean) {
 	if (!skipNormalize) opts = normalizeOpts.rectangle(opts);
 
 	state.ctx.fillStyle = opts.fill;
@@ -25,7 +24,7 @@ export function rectangle(opts: ifc.Object.PartialOptions.Rectangle, skipNormali
 /**
  * Draw a triangle on the canvas.
  */
-export function triangle(opts: ifc.Object.PartialOptions.Triangle, skipNormalize?: boolean) {
+export function triangle(opts: ObjectPartialOptions.Triangle, skipNormalize?: boolean) {
 	if (!skipNormalize) opts = normalizeOpts.triangle(opts);
 
 	state.ctx.fillStyle = opts.fill;
@@ -46,7 +45,7 @@ export function triangle(opts: ifc.Object.PartialOptions.Triangle, skipNormalize
 /**
  * Draw an ellipse on the canvas.
  */
-export function ellipse(opts: ifc.Object.PartialOptions.Ellipse, skipNormalize?: boolean) {
+export function ellipse(opts: ObjectPartialOptions.Ellipse, skipNormalize?: boolean) {
 	if (!skipNormalize) opts = normalizeOpts.ellipse(opts);
 
 	state.ctx.fillStyle = opts.fill;
@@ -63,7 +62,7 @@ export function ellipse(opts: ifc.Object.PartialOptions.Ellipse, skipNormalize?:
 /**
  * Draw a line on the canvas.
  */
-export function line(opts: ifc.Object.PartialOptions.Line, skipNormalize?: boolean) {
+export function line(opts: ObjectPartialOptions.Line, skipNormalize?: boolean) {
 	if (!skipNormalize) opts = normalizeOpts.line(opts);
 
 	state.ctx.strokeStyle = opts.stroke;
@@ -81,7 +80,7 @@ export function line(opts: ifc.Object.PartialOptions.Line, skipNormalize?: boole
 /**
  * Draw text on the canvas.
  */
-export function text(opts: ifc.Object.PartialOptions.Text, skipNormalize?: boolean) {
+export function text(opts: ObjectPartialOptions.Text, skipNormalize?: boolean) {
 	if (!skipNormalize) opts = normalizeOpts.text(opts);
 
 	state.ctx.font = opts.sizePX + 'px ' + opts.fontName;
@@ -96,7 +95,7 @@ export function text(opts: ifc.Object.PartialOptions.Text, skipNormalize?: boole
 /**
  * Draw an arbitrary polygon with any number of vertices on the canvas.
  */
-export function polygon(opts: ifc.Object.PartialOptions.Polygon, skipNormalize?: boolean) {
+export function polygon(opts: ObjectPartialOptions.Polygon, skipNormalize?: boolean) {
 	if (!skipNormalize) opts = normalizeOpts.polygon(opts);
 
 	state.ctx.fillStyle = opts.fill;

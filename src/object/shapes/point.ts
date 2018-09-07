@@ -1,13 +1,12 @@
-import { Object } from '../../ifc';
 import * as draw from '../../draw';
 import BaseObjectShape from './_base';
 
 export default class Point extends BaseObjectShape {
-	shape = 'point' as Object.Possible.ShapeLabel;
-	props: Object.Options.Point;
-	private fixedProps: Object.Options.Ellipse;
+	shape = 'point' as Possible.ShapeLabel;
+	props: ObjectOptions.Point;
+	private fixedProps: ObjectOptions.Ellipse;
 
-	constructor(opts: Object.Options.Point) {
+	constructor(opts: ObjectOptions.Point) {
 		super();
 
 		this.props = opts;
@@ -27,7 +26,7 @@ export default class Point extends BaseObjectShape {
 		draw.ellipse(this.fixedProps, true);
 	}
 
-	move(newPos: Object.Position.Point) {
+	move(newPos: ObjectPosition.Point) {
 		this.props.pos.x = newPos.x;
 		this.props.pos.y = newPos.y;
 		this.fixedProps.pos.x = newPos.x;
@@ -44,7 +43,7 @@ export default class Point extends BaseObjectShape {
 	/**
 	 * Change the point's `fill` and/or `stroke`.
 	 */
-	restyle(newStyle: Partial<Object.Options.Point>) {
+	restyle(newStyle: Partial<ObjectOptions.Point>) {
 		if (newStyle.fill !== undefined) {
 			this.props.fill = newStyle.fill;
 			this.fixedProps.fill = newStyle.fill;

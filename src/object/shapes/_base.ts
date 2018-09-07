@@ -1,20 +1,19 @@
 import AbstractObjectShape from './_abstract';
-import { Object, Coordinate } from '../../ifc';
 
 export default class BaseObjectShape extends AbstractObjectShape {
 	_draw() {
 		// call c.draw method for whatever shape this is
 	}
 
-	move(newPos: Object.Possible.Position) {
+	move(newPos: Possible.Position) {
 		//
 	}
 
-	resize(newDims: Object.Possible.Dimension) {
+	resize(newDims: Possible.Dimension) {
 		//
 	}
 
-	restyle(newStyle: Partial<Object.Possible.Style>) {
+	restyle(newStyle: Partial<Possible.Style>) {
 		//
 	}
 

@@ -1,35 +1,33 @@
-import * as Position from './position';
-import * as Dimension from './dimension';
-import * as Style from './style';
+namespace ObjectPartialOptions {
+	export type Rectangle =
+		{ pos: ObjectPosition.Rectangle } &
+		ObjectDimensions.Rectangle &
+		Partial<ObjectStyle.Rectangle>;
 
-export type Rectangle =
-	{ pos: Position.Rectangle } &
-	Dimension.Rectangle &
-	Partial<Style.Rectangle>;
+	export type Triangle =
+		{ pos: ObjectPosition.Triangle } &
+		Partial<ObjectStyle.Triangle>;
 
-export type Triangle =
-	{ pos: Position.Triangle } &
-	Partial<Style.Triangle>;
+	export type Ellipse =
+		{ pos: ObjectPosition.Ellipse } &
+		ObjectDimensions.Ellipse &
+		Partial<ObjectStyle.Ellipse>;
 
-export type Ellipse =
-	{ pos: Position.Ellipse } &
-	Dimension.Ellipse &
-	Partial<Style.Ellipse>;
+	export type Line =
+		{ pos: ObjectPosition.Line } &
+		Partial<ObjectDimensions.Line> &
+		Partial<ObjectStyle.Line>;
 
-export type Line =
-	{ pos: Position.Line } &
-	Partial<Dimension.Line> &
-	Partial<Style.Line>;
+	export type Text =
+		{ pos: ObjectPosition.Text, text: string } &
+		Partial<ObjectDimensions.Text> &
+		Partial<ObjectStyle.Text>;
 
-export type Text =
-	{ pos: Position.Text, text: string } &
-	Partial<Dimension.Text> &
-	Partial<Style.Text>;
+	export type Point =
+		{ pos: ObjectPosition.Point } &
+		Partial<ObjectStyle.Point>;
 
-export type Point =
-	{ pos: Position.Point } &
-	Partial<Style.Point>;
-
-export type Polygon =
-	{ pos: Position.Polygon } &
-	Partial<Style.Polygon>;
+	export type Polygon =
+		{ pos: ObjectPosition.Polygon } &
+		Partial<ObjectStyle.Polygon>;
+}

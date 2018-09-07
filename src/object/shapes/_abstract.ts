@@ -1,12 +1,10 @@
-import { Object, Coordinate } from '../../ifc';
-
 export default abstract class AbstractObjectShape {
-	public readonly shape: Object.Possible.ShapeLabel;
+	public readonly shape: Possible.ShapeLabel;
 	public _alive: boolean = true;
-	public props: Object.Possible.Option;
+	public props: Possible.Option;
 
 	/**
-	 * **INTERNAL FUNCTION**
+	 * @private
 	 *
 	 * Draws this object to the canvas.
 	 */
@@ -15,17 +13,17 @@ export default abstract class AbstractObjectShape {
 	/**
 	 * Move this object to a specific Coordinate(s).
 	 */
-	abstract move(newPos: Object.Possible.Position): void;
+	abstract move(newPos: Possible.Position): void;
 
 	/**
 	 * Change the dimensions of this object.
 	 */
-	abstract resize(newDims: Object.Possible.Dimension): void;
+	abstract resize(newDims: Possible.Dimension): void;
 
 	/**
 	 * Change the style of this object.
 	 */
-	abstract restyle(newStyle: Partial<Object.Possible.Style>): void;
+	abstract restyle(newStyle: Partial<Possible.Style>): void;
 
 	/**
 	 * Flags object for deletion. It will be cleared on the next frame.

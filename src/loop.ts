@@ -1,14 +1,13 @@
 import * as draw from './draw';
 import * as utility from './utility';
 import state from './state';
-import * as ifc from './ifc';
 
-let loopFunction: ifc.Loop.Function;
+let loopFunction: Loop.Function;
 let timing: boolean = false;
 let clearEachFrame: boolean = false;
 let currentFrame: number = -1;
-let background: ifc.CanvasColor = 'white';
-let backgroundObject: ifc.Object.Options.Rectangle;
+let background: CanvasColor = 'white';
+let backgroundObject: ObjectOptions.Rectangle;
 let framerate: number = 1;
 let drawnBackground: boolean = false;
 let timingStart: number, timingEnd: number, timingResult: number;
@@ -16,7 +15,7 @@ let timingStart: number, timingEnd: number, timingResult: number;
 /**
  * Set a loop which will be called continuously using `requestAnimationFrame`.
  */
-export function setLoop(opts: ifc.Loop.Options) {
+export function setLoop(opts: Loop.Options) {
 	loopFunction = opts.loopFunction;
 	timing = opts.timing || false;
 	clearEachFrame = opts.clearEachFrame || false;

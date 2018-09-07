@@ -1,12 +1,11 @@
-import { Object } from '../../ifc';
 import * as draw from '../../draw';
 import BaseObjectShape from './_base';
 
 export default class Line extends BaseObjectShape {
-	shape = 'line' as Object.Possible.ShapeLabel;
-	props: Object.Options.Line;
+	shape = 'line' as Possible.ShapeLabel;
+	props: ObjectOptions.Line;
 
-	constructor(opts: Object.Options.Line) {
+	constructor(opts: ObjectOptions.Line) {
 		super();
 
 		this.props = opts;
@@ -19,7 +18,7 @@ export default class Line extends BaseObjectShape {
 	/**
 	 * Change the position of the line by moving each of its points.
 	 */
-	move(newPos: Object.Position.Line) {
+	move(newPos: ObjectPosition.Line) {
 		for (let i = 0; i < newPos.length; i++) {
 			this.props.pos[i].x = newPos[i].x;
 			this.props.pos[i].y = newPos[i].y;
@@ -29,14 +28,14 @@ export default class Line extends BaseObjectShape {
 	/**
 	 * Change the line's `lineWidth`.
 	 */
-	resize(newDim: Object.Dimension.Line) {
+	resize(newDim: ObjectDimensions.Line) {
 		this.props.lineWidth = newDim.lineWidth;
 	}
 
 	/**
 	 * Change the line's `stroke`.
 	 */
-	restyle(newStyle: Object.Style.Line) {
+	restyle(newStyle: ObjectStyle.Line) {
 		this.props.stroke = newStyle.stroke;
 	}
 }

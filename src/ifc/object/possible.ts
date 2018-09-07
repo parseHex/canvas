@@ -1,22 +1,19 @@
-import * as Position from './position';
-import * as Dimension from './dimension';
-import * as Style from './style';
-import * as Options from './options';
+namespace Possible {
+	export type Option =
+		ObjectOptions.Rectangle | ObjectOptions.Ellipse | ObjectOptions.Triangle |
+		ObjectOptions.Line | ObjectOptions.Text | ObjectOptions.Point | ObjectOptions.Polygon;
 
-export type Option =
-	Options.Rectangle | Options.Ellipse | Options.Triangle |
-	Options.Line | Options.Text | Options.Point | Options.Polygon;
+	export type Position =
+		ObjectPosition.Rectangle | ObjectPosition.Ellipse | ObjectPosition.Triangle |
+		ObjectPosition.Line | ObjectPosition.Text | ObjectPosition.Point | ObjectPosition.Polygon;
 
-export type Position =
-	Position.Rectangle | Position.Ellipse | Position.Triangle |
-	Position.Line | Position.Text | Position.Point | Position.Polygon;
+	export type Dimension =
+		ObjectDimensions.Rectangle | ObjectDimensions.Ellipse | ObjectDimensions.Line | ObjectDimensions.Text;
 
-export type Dimension =
-	Dimension.Rectangle | Dimension.Ellipse | Dimension.Line | Dimension.Text;
+	export type Style =
+		ObjectStyle.Rectangle | ObjectStyle.Ellipse | ObjectStyle.Triangle | ObjectStyle.Line |
+		ObjectStyle.Text | ObjectStyle.Point | ObjectStyle.Polygon;
 
-export type Style =
-	Style.Rectangle | Style.Ellipse | Style.Triangle | Style.Line |
-	Style.Text | Style.Point | Style.Polygon;
-
-export type ShapeLabel =
-	'rectangle' | 'triangle' | 'ellipse' | 'line' | 'text' | 'point' | 'polygon';
+	export type ShapeLabel =
+		'rectangle' | 'triangle' | 'ellipse' | 'line' | 'text' | 'point' | 'polygon';
+}

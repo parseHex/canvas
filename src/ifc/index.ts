@@ -1,16 +1,16 @@
-import * as Object from './object';
-import * as Loop from './loop';
-
-export interface Coordinate {
+interface Coordinate {
 	x: number;
 	y: number;
 }
 
-export interface FillAndStroke {
+interface FillAndStroke {
 	fill: CanvasColor;
 	stroke: CanvasColor;
 }
 
-export type CanvasColor = string | CanvasGradient | CanvasPattern;
+type CanvasColor = string | CanvasGradient | CanvasPattern;
 
-export { Loop, Object };
+type MouseEventHandler = (
+	/** The canvas-relative position of the mouse. */
+	mousePosition: Coordinate
+) => void;
