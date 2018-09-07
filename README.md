@@ -9,7 +9,7 @@ It's mostly for my own use but I'm trying to keep it organized and easy to use f
 ```javascript
 
 // ES6
-import * as c from 'proto-canvas';
+import c from 'proto-canvas';
 
 // CommonJS
 const c = require('proto-canvas');
@@ -24,7 +24,7 @@ const c = protoCanvas;
 
 ```javascript
 
-import * as c from 'proto-canvas';
+import c from 'proto-canvas';
 
 // set the canvas element
 c.setCanvas(document.getElementById('main'));

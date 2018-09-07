@@ -2,14 +2,12 @@ import * as draw from './draw';
 import * as utility from './utility';
 import state from './state';
 import * as object from './object';
-
-export { setLoop } from './loop';
-export { draw, object, utility };
+import { setLoop } from './loop';
 
 /**
  * Set the canvas element (and context) that will be used for all future operations.
  */
-export function setCanvas(canvasEl: HTMLCanvasElement) {
+function setCanvas(canvasEl: HTMLCanvasElement) {
 	state.canvas = canvasEl;
 	state.ctx = canvasEl.getContext('2d');
 }
@@ -20,7 +18,7 @@ export function setCanvas(canvasEl: HTMLCanvasElement) {
  *
  * Be sure to set this before adding a loop.
  */
-export function setBackgroundCanvas(canvas: HTMLCanvasElement) {
+function setBackgroundCanvas(canvas: HTMLCanvasElement) {
 	state.backgroundCanvas = canvas;
 	state.backgroundCtx = canvas.getContext('2d');
 }
@@ -28,6 +26,14 @@ export function setBackgroundCanvas(canvas: HTMLCanvasElement) {
 /**
  * Get the canvas's context.
  */
-export function getContext() {
+function getContext() {
 	return state.ctx;
 }
+
+export default {
+	setCanvas,
+	setLoop,
+	setBackgroundCanvas,
+	getContext,
+	draw, object, utility,
+};
