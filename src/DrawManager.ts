@@ -63,7 +63,7 @@ export class DrawManager {
 	}
 
 	public text(options: TextOptions) {
-		const size = options.size || defaults.sizePX;
+		const size = options.size || defaults.size;
 		const fontName = options.fontName || defaults.fontName;
 
 		this.ctx.font = size + 'px ' + fontName;
