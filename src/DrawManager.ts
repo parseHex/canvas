@@ -22,4 +22,15 @@ export class DrawManager {
 		this.ctx.stroke();
 		this.ctx.closePath();
 	}
+
+	public rectangle(options: Rectangle) {
+		this.ctx.fillStyle = options.fill;
+		this.ctx.strokeStyle = options.stroke;
+
+		this.ctx.beginPath();
+		this.ctx.rect(options.x, options.y, options.width, options.height);
+		this.ctx.fill();
+		this.ctx.stroke();
+		this.ctx.closePath();
+	}
 }
