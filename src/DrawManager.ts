@@ -16,9 +16,9 @@ export class DrawManager {
 		this.ctx.lineWidth = options.lineWidth || defaults.lineWidth;
 
 		this.ctx.beginPath();
-		for (let i = 0; i < options.points.length - 1; i++) {
-			this.ctx.moveTo(options.points[i].x, options.points[i].y);
-			this.ctx.lineTo(options.points[i + 1].x, options.points[i + 1].y);
+		this.ctx.moveTo(options.points[0].x, options.points[0].y);
+		for (let i = 1; i < options.points.length; i++) {
+			this.ctx.lineTo(options.points[i].x, options.points[i].y);
 		}
 		this.ctx.stroke();
 		this.ctx.closePath();
