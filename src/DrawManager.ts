@@ -24,11 +24,25 @@ export class DrawManager {
 	}
 
 	public rectangle(options: Rectangle) {
-		this.ctx.fillStyle = options.fill;
-		this.ctx.strokeStyle = options.stroke;
+		this.ctx.fillStyle = options.fill || defaults.fill;
+		this.ctx.strokeStyle = options.stroke || defaults.stroke;
 
 		this.ctx.beginPath();
 		this.ctx.rect(options.x, options.y, options.width, options.height);
+		this.ctx.fill();
+		this.ctx.stroke();
+		this.ctx.closePath();
+	}
+
+	public triangle(options: Triangle) {
+		this.ctx.fillStyle = options.fill || defaults.fill;
+		this.ctx.strokeStyle = options.stroke || defaults.stroke;
+
+		this.ctx.beginPath();
+		this.ctx.moveTo(options.points[0].x, options.points[0].y);
+		this.ctx.lineTo(options.points[1].x, options.points[1].y);
+		this.ctx.lineTo(options.points[2].x, options.points[2].y);
+		this.ctx.lineTo(options.points[0].x, options.points[0].y);
 		this.ctx.fill();
 		this.ctx.stroke();
 		this.ctx.closePath();

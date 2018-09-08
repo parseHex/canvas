@@ -11,3 +11,8 @@ interface Rectangle {
 	fill?: CanvasColor;
 	stroke?: CanvasColor;
 }
+interface Triangle {
+	points: [Coordinate, Coordinate, Coordinate];
+	fill?: CanvasColor;
+	stroke?: CanvasColor;
+}
