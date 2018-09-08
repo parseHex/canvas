@@ -11,7 +11,7 @@ export class DrawManager {
 		this.ctx = this.canvas.ctx;
 	}
 
-	public line(options: Line) {
+	public line(options: LineOptions) {
 		this.ctx.strokeStyle = options.stroke || defaults.stroke;
 		this.ctx.lineWidth = options.lineWidth || defaults.lineWidth;
 
@@ -24,7 +24,7 @@ export class DrawManager {
 		this.ctx.closePath();
 	}
 
-	public rectangle(options: Rectangle) {
+	public rectangle(options: RectangleOptions) {
 		this.ctx.fillStyle = options.fill || defaults.fill;
 		this.ctx.strokeStyle = options.stroke || defaults.stroke;
 
@@ -35,7 +35,7 @@ export class DrawManager {
 		this.ctx.closePath();
 	}
 
-	public triangle(options: Triangle) {
+	public triangle(options: TriangleOptions) {
 		this.ctx.fillStyle = options.fill || defaults.fill;
 		this.ctx.strokeStyle = options.stroke || defaults.stroke;
 
@@ -49,7 +49,7 @@ export class DrawManager {
 		this.ctx.closePath();
 	}
 
-	public ellipse(options: Ellipse) {
+	public ellipse(options: EllipseOptions) {
 		this.ctx.fillStyle = options.fill || defaults.fill;
 		this.ctx.strokeStyle = options.stroke || defaults.stroke;
 
@@ -71,5 +71,20 @@ export class DrawManager {
 		this.ctx.strokeStyle = options.stroke;
 		this.ctx.fillText(options.value, options.x, options.y);
 		this.ctx.strokeText(options.value, options.x, options.y);
+	}
+
+	public polygon(options: PolygonOptions) {
+		this.ctx.fillStyle = options.fill || defaults.fill;
+		this.ctx.strokeStyle = options.stroke || defaults.stroke;
+
+		this.ctx.beginPath();
+		this.ctx.moveTo(options.points[0].x, options.points[0].y);
+		for (let i = 1; i < options.points.length; i++) {
+			this.ctx.lineTo(options.points[i].x, options.points[i].y);
+		}
+		this.ctx.lineTo(options.points[0].x, options.points[0].y);
+		this.ctx.fill();
+		this.ctx.stroke();
+		this.ctx.closePath();
 	}
 }

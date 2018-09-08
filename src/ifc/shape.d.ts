@@ -1,20 +1,20 @@
-interface Line {
+interface LineOptions {
 	points: Coordinate[];
 	lineWidth?: number;
 	stroke?: CanvasColor;
 }
-interface Rectangle extends Coordinate {
+interface RectangleOptions extends Coordinate {
 	width: number;
 	height: number;
 	fill?: CanvasColor;
 	stroke?: CanvasColor;
 }
-interface Triangle {
+interface TriangleOptions {
 	points: [Coordinate, Coordinate, Coordinate];
 	fill?: CanvasColor;
 	stroke?: CanvasColor;
 }
-interface Ellipse extends Coordinate {
+interface EllipseOptions extends Coordinate {
 	rx: number;
 	ry?: number;
 	fill?: CanvasColor;
@@ -24,6 +24,11 @@ interface TextOptions extends Coordinate {
 	value: string;
 	fontName?: string;
 	size?: number;
+	fill?: CanvasColor;
+	stroke?: CanvasColor;
+}
+interface PolygonOptions {
+	points: Coordinate[];
 	fill?: CanvasColor;
 	stroke?: CanvasColor;
 }
