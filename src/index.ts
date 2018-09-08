@@ -1,39 +1,34 @@
-import * as draw from './draw';
+import { LoopManager } from './LoopManager';
+import { MouseManager } from './MouseManager';
+
+export default class CanvasManager {
+	public readonly element: HTMLCanvasElement;
+	public readonly ctx: CanvasRenderingContext2D;
+
+	public loop: LoopManager;
+	public mouse: MouseManager;
+
+	public get width() { return this.element.width; }
+	public get height() { return this.element.height; }
+
+	constructor(canvasElement: HTMLCanvasElement) {
+		this.element = canvasElement;
+		this.ctx = this.element.getContext('2d');
+
+		this.loop = new LoopManager(this);
+		this.mouse = new MouseManager(this);
+	}
+
+	public clear() {
+		this.ctx.clearRect(0, 0, this.width, this.height);
+	}
+
+	public resetTransform() {
+		this.ctx.setTransform(1, 0, 0, 1, 0, 0);
+	}
+}
+
 import * as utility from './utility';
-import state from './state';
-import * as object from './object';
-import { setLoop } from './loop';
+export { utility };
 
-/**
- * Set the canvas element (and context) that will be used for all future operations.
- */
-function setCanvas(canvasEl: HTMLCanvasElement) {
-	state.canvas = canvasEl;
-	state.ctx = canvasEl.getContext('2d');
-}
-
-/**
- * Set a separate canvas element that will be used for drawing the background (set with the loop).
- * This can help with performance since the background can be drawn once on a separate canvas.
- *
- * Be sure to set this before adding a loop.
- */
-function setBackgroundCanvas(canvas: HTMLCanvasElement) {
-	state.backgroundCanvas = canvas;
-	state.backgroundCtx = canvas.getContext('2d');
-}
-
-/**
- * Get the canvas's context.
- */
-function getContext() {
-	return state.ctx;
-}
-
-export default {
-	setCanvas,
-	setLoop,
-	setBackgroundCanvas,
-	getContext,
-	draw, object, utility,
-};
+// const c = new CanvasManager(document.createElement('canvas'));
