@@ -20,3 +20,10 @@ interface Ellipse extends Coordinate {
 	fill?: CanvasColor;
 	stroke?: CanvasColor;
 }
+interface TextOptions extends Coordinate {
+	value: string;
+	fontName?: string;
+	size?: number;
+	fill?: CanvasColor;
+	stroke?: CanvasColor;
+}

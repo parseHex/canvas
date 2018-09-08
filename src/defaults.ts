@@ -5,5 +5,5 @@ export default {
 	textStroke: 'transparent',
 	lineWidth: 1,
 	fontName: 'sans-serif',
-	sizePX: 12,
+	size: 12,
 };

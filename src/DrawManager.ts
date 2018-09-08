@@ -61,4 +61,15 @@ export class DrawManager {
 		this.ctx.fill();
 		this.ctx.closePath();
 	}
+
+	public text(options: TextOptions) {
+		const size = options.size || defaults.sizePX;
+		const fontName = options.fontName || defaults.fontName;
+
+		this.ctx.font = size + 'px ' + fontName;
+		this.ctx.fillStyle = options.fill;
+		this.ctx.strokeStyle = options.stroke;
+		this.ctx.fillText(options.value, options.x, options.y);
+		this.ctx.strokeText(options.value, options.x, options.y);
+	}
 }
