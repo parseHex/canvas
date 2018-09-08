@@ -1,5 +1,6 @@
 import CanvasManager from '.';
 import defaults from './defaults';
+import constants from './constants';
 
 export class DrawManager {
 	private canvas: CanvasManager;
@@ -45,6 +46,19 @@ export class DrawManager {
 		this.ctx.lineTo(options.points[0].x, options.points[0].y);
 		this.ctx.fill();
 		this.ctx.stroke();
+		this.ctx.closePath();
+	}
+
+	public ellipse(options: Ellipse) {
+		this.ctx.fillStyle = options.fill || defaults.fill;
+		this.ctx.strokeStyle = options.stroke || defaults.stroke;
+
+		const rx = options.rx;
+		const ry = options.ry !== undefined ? options.ry : options.rx;
+
+		this.ctx.beginPath();
+		this.ctx.ellipse(options.x, options.y, rx, ry, 0, 0, constants.PI2);
+		this.ctx.fill();
 		this.ctx.closePath();
 	}
 }
