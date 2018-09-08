@@ -1,4 +1,4 @@
-namespace Possible {
+declare namespace Possible {
 	export type Option =
 		ObjectOptions.Rectangle | ObjectOptions.Ellipse | ObjectOptions.Triangle |
 		ObjectOptions.Line | ObjectOptions.Text | ObjectOptions.Point | ObjectOptions.Polygon;

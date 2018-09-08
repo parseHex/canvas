@@ -1,4 +1,4 @@
-namespace ObjectOptions {
+declare namespace ObjectOptions {
 	export interface Rectangle extends ObjectDimensions.Rectangle, ObjectStyle.Rectangle {
 		pos: ObjectPosition.Rectangle;
 	}

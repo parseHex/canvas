@@ -1,4 +1,4 @@
-namespace Loop {
+declare namespace Loop {
 	export type Function = (currentFrame: number) => void;
 
 	export interface Options {

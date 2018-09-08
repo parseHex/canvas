@@ -1,4 +1,4 @@
-namespace ObjectPartialOptions {
+declare namespace ObjectPartialOptions {
 	export type Rectangle =
 		{ pos: ObjectPosition.Rectangle } &
 		ObjectDimensions.Rectangle &

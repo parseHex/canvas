@@ -1,4 +1,4 @@
-namespace ObjectDimensions {
+declare namespace ObjectDimensions {
 	export interface Rectangle {
 		width: number;
 		height: number;

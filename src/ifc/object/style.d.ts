@@ -1,4 +1,4 @@
-namespace ObjectStyle {
+declare namespace ObjectStyle {
 	export interface Rectangle extends FillAndStroke { }
 	export interface Triangle extends FillAndStroke { }
 	export interface Polygon extends FillAndStroke { }
