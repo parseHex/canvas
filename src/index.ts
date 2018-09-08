@@ -1,5 +1,6 @@
 import { LoopManager } from './LoopManager';
 import { MouseManager } from './MouseManager';
+import { DrawManager } from './DrawManager';
 
 export default class CanvasManager {
 	public readonly element: HTMLCanvasElement;
@@ -7,6 +8,8 @@ export default class CanvasManager {
 
 	public loop: LoopManager;
 	public mouse: MouseManager;
+	/** For drawing primitive stateless shapes. */
+	public draw: DrawManager;
 
 	public get width() { return this.element.width; }
 	public get height() { return this.element.height; }
@@ -17,6 +20,7 @@ export default class CanvasManager {
 
 		this.loop = new LoopManager(this);
 		this.mouse = new MouseManager(this);
+		this.draw = new DrawManager(this);
 	}
 
 	public clear() {
